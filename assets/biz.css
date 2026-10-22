@@ -238,3 +238,5 @@ a.skill p{margin-bottom:16px}
 .hero-menu .hm-all{border:0;padding-bottom:4px;color:var(--accent);font-weight:600;font-size:.94rem}
 @media (max-width:900px){.hero.no-visual .hero-inner{grid-template-columns:1fr;gap:28px}}
 @media (max-width:640px){.hero-menu{padding:6px 16px 10px}.hero-menu a{padding:12px 0}.hero.no-visual .scroll-hint{display:none}}
+/* v7: uden brødkrummer */
+.page-hero.tight{padding-top:clamp(28px,4vw,48px)}
