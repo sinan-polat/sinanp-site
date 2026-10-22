@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kontakt – få et uforpligtende tilbud | Sinan Polat</title>
-<meta name="description" content="Skriv eller ring for et uforpligtende tilbud på hjemmeside, webhosting, Google Ads eller motion graphics.">
+<meta name="description" content="Send en forespørgsel på under et minut: vælg ydelse, skriv din e-mail, send. Uforpligtende tilbud på hjemmeside, webhosting, Google Ads eller motion graphics.">
 <link rel="canonical" href="https://sinanp.dk/kontakt/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="da_DK">
 <meta property="og:site_name" content="Sinan Polat">
 <meta property="og:title" content="Kontakt – få et uforpligtende tilbud | Sinan Polat">
-<meta property="og:description" content="Skriv eller ring for et uforpligtende tilbud på hjemmeside, webhosting, Google Ads eller motion graphics.">
+<meta property="og:description" content="Send en forespørgsel på under et minut: vælg ydelse, skriv din e-mail, send. Uforpligtende tilbud på hjemmeside, webhosting, Google Ads eller motion graphics.">
 <meta property="og:url" content="https://sinanp.dk/kontakt/">
 <meta property="og:image" content="https://sinanp.dk/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,9 +20,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="../assets/base.css?v=3">
-<link rel="stylesheet" href="../assets/dot.css?v=3">
-<link rel="stylesheet" href="../assets/biz.css?v=3">
+<link rel="stylesheet" href="../assets/base.css?v=4">
+<link rel="stylesheet" href="../assets/dot.css?v=4">
+<link rel="stylesheet" href="../assets/biz.css?v=4">
 <script>
   /* Mørkt tema som standard. Har den besøgende valgt lyst, huskes det. */
   (function(){try{var t=localStorage.getItem('tema-sinanp');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();
@@ -33,8 +33,9 @@
 <div class="progress" aria-hidden="true"></div>
 <header class="site-header">
   <a class="brand" href="../" aria-label="Sinan Polat – forside">Sinan Polat<span class="dot"></span></a>
-  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../ydelser/">Ydelser</a><a href="../cases/">Cases</a><a href="../om/">Om mig</a><a href="../kontakt/" data-page aria-current="page">Kontakt</a></nav>
+  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../ydelser/">Ydelser</a><a href="../cases/">Cases</a><a href="../om/">Om mig</a><a href="../kontakt/" data-page aria-current="page">Kontakt</a><a class="nav-switch" href="https://portfolio.sinanp.dk/">Portfolio ↗</a></nav>
   <div class="header-tools">
+    <nav class="site-tabs" aria-label="Skift side"><a class="on" href="../" aria-current="true">Forretning</a><a href="https://portfolio.sinanp.dk/">Portfolio</a></nav>
     <a class="cv-link" href="../kontakt/">Få et tilbud <span class="arr" aria-hidden="true">→</span></a>
     <button class="icon-btn" id="themeToggle" type="button" aria-label="Skift mellem lyst og mørkt tema">
       <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
@@ -44,45 +45,36 @@
   </div>
 </header>
 <main id="indhold">
-  <section class="page-hero">
+  <section class="page-hero tight">
     <nav class="crumbs" aria-label="Brødkrumme"><a href="../">Forside</a> › <span aria-current="page">Kontakt</span></nav>
-    <p class="eyebrow reveal">Kontakt</p>
-    <h1 class="reveal">Få et uforpligtende <em>tilbud</em></h1>
-    <p class="lead reveal">Fortæl kort om din virksomhed, og hvad du har brug for. Jeg vender tilbage, typisk inden for en hverdag.</p>
+    <h1>Få et uforpligtende <em>tilbud</em></h1>
+    <p class="lead">Vælg, skriv din e-mail, send. Det tager under et minut, og du får svar inden for en hverdag.</p>
   </section>
   <section class="section" style="padding-top:12px">
     <div class="split">
-      <div class="panel reveal">
-        <form class="form" id="contactForm" novalidate>
-          <div class="field"><label for="navn">Navn</label><input id="navn" name="navn" autocomplete="name"><span class="err-msg">Skriv dit navn.</span></div>
-          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email"><span class="err-msg">Skriv en gyldig e-mail.</span></div>
-          <div class="field"><label for="telefon">Telefon <span class="opt">(valgfrit)</span></label><input id="telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel"></div>
-          <div class="field"><label for="virksomhed">Virksomhed <span class="opt">(valgfrit)</span></label><input id="virksomhed" name="virksomhed" autocomplete="organization"></div>
-          <fieldset class="full" style="border:0;padding:0;margin:0"><legend>Hvad drejer det sig om?</legend><div class="chips-pick"><label><input type="checkbox" name="ydelse" value="Hjemmeside"><span>Hjemmesider</span></label><label><input type="checkbox" name="ydelse" value="Webhosting"><span>Webhosting</span></label><label><input type="checkbox" name="ydelse" value="Google Ads"><span>Google Ads</span></label><label><input type="checkbox" name="ydelse" value="Motion graphics"><span>Motion graphics</span></label></div></fieldset>
-          <div class="full field"><label for="besked">Besked</label><textarea id="besked" name="besked" placeholder="Fortæl kort om din virksomhed, og hvad du har brug for."></textarea><span class="err-msg">Skriv en kort besked.</span></div>
-          <div class="full" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
-            <p class="form-note">Uforpligtende. Svar typisk inden for en hverdag.</p>
-            <button class="button magnetic" type="submit">Send og få et tilbud →</button>
+      <div class="panel">
+        <form class="form quick" id="contactForm" novalidate>
+          <fieldset class="full" style="border:0;padding:0;margin:0"><legend><span class="stepn">1</span>Hvad kan jeg hjælpe med?</legend><div class="chips-pick"><label><input type="radio" name="ydelse" value="Hjemmeside"><span>Hjemmesider</span></label><label><input type="radio" name="ydelse" value="Webhosting"><span>Webhosting</span></label><label><input type="radio" name="ydelse" value="Google Ads"><span>Google Ads</span></label><label><input type="radio" name="ydelse" value="Motion graphics"><span>Motion graphics</span></label></div></fieldset>
+          <div class="full field"><label for="email"><span class="stepn">2</span>Din e-mail</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="navn@firma.dk"><span class="err-msg">Skriv en gyldig e-mail, så jeg kan svare dig.</span></div>
+          <div class="full field"><label for="besked">Et par ord om opgaven <span class="opt">(valgfrit)</span></label><textarea id="besked" name="besked" rows="2" placeholder="Fx: Vi er et lille firma og mangler en ny hjemmeside."></textarea></div>
+          <div class="full form-send">
+            <button class="button magnetic" type="submit">Send forespørgsel →</button>
+            <p class="form-note">Uforpligtende · Svar inden for en hverdag</p>
           </div>
         </form>
-        <p class="form-ok" id="formOk" tabindex="-1">Tak for din besked. Jeg vender tilbage hurtigst muligt.</p>
+        <p class="form-ok" id="formOk" tabindex="-1">Tak! Jeg vender tilbage inden for en hverdag.</p>
       </div>
-      <aside class="contact-card reveal" aria-label="Kontaktoplysninger">
-        <a href="mailto:sinanp2020@hotmail.com"><small>E-mail</small><b>sinanp2020@hotmail.com</b></a>
-        <a href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener"><small>LinkedIn</small><b>Sinan Polat ↗</b></a>
+      <aside class="contact-card reveal" aria-label="Andre måder at kontakte mig på">
+        <p class="kicker" style="padding-top:16px;margin:0">Hellere skrive selv?</p>
+        <a href="mailto:sinanp2020@hotmail.com?subject=Foresp%C3%B8rgsel%20fra%20sinanp.dk"><small>Én klik: åbn mail</small><b>sinanp2020@hotmail.com</b></a>
+        <a href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener"><small>LinkedIn</small><b>Skriv på LinkedIn ↗</b></a>
       </aside>
     </div>
   </section>
 </main>
 <footer id="kontakt" class="contact mini">
   <div class="contact-inner">
-    <div class="mini-cta">
-      <h2>Ring eller skriv <em>direkte</em>.</h2>
-      <div class="mini-actions">
-        <a class="button light magnetic" href="../kontakt/">Få et uforpligtende tilbud →</a>
-        <button class="button ghost-light" type="button" id="copyMail"><span class="copy-label">sinanp2020@hotmail.com</span><span class="copy-ico" aria-hidden="true">⧉</span></button>
-      </div>
-    </div>
+    
     <div class="mini-foot">
       <a class="foot-brand" href="../">Sinan Polat<i></i></a>
       <nav aria-label="Footer"><a href="../ydelser/hjemmeside/">Hjemmesider</a><a href="../ydelser/webhosting/">Webhosting</a><a href="../ydelser/google-ads/">Google Ads</a><a href="../ydelser/motion-graphics/">Motion graphics</a><a href="../cases/">Cases</a><a href="../om/">Om mig</a><a href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a></nav>
@@ -91,8 +83,8 @@
   </div>
 </footer>
 <div class="toast" role="status" aria-live="polite"></div>
-<div class="cta-bar" aria-label="Hurtig kontakt"><a class="button" href="../kontakt/">Få et uforpligtende tilbud →</a></div>
-<script src="../assets/site.js?v=3" defer></script>
-<script src="../assets/dot.js?v=3" defer></script>
+
+<script src="../assets/site.js?v=4" defer></script>
+<script src="../assets/dot.js?v=4" defer></script>
 </body>
 </html>

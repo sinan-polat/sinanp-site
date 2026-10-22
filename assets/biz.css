@@ -157,3 +157,25 @@ a.skill p{margin-bottom:16px}
   .mini-actions .button{justify-content:center}
   .mini-foot nav{flex-basis:100%;order:3}
 }
+
+/* ---------- v5: hurtig formular (2–3 klik) ---------- */
+.form.quick{grid-template-columns:1fr;gap:18px}
+.form.quick legend,.form.quick label[for]{display:flex;align-items:center;gap:10px}
+.stepn{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font:600 .78rem var(--mono)}
+.form.quick textarea{min-height:76px}
+.form-send{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+.form-send .button{flex:0 0 auto}
+@media (max-width:640px){.form-send .button{width:100%;justify-content:center}.chips-pick span{padding:11px 16px}}
+.contact-card .kicker{color:var(--muted)}
+.page-hero.tight{padding-top:clamp(24px,4vw,48px);padding-bottom:8px}
+.page-hero.tight h1{font-size:clamp(2.1rem,4.4vw,3.4rem)}
+.page-hero.tight .lead{margin-top:.5em}
+
+/* ---------- v5: faner mellem forretning og portfolio ---------- */
+.site-tabs{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.site-tabs a{padding:7px 13px;border-radius:999px;font:600 .82rem var(--sans);color:var(--muted);text-decoration:none;transition:background .2s,color .2s}
+.site-tabs a:hover{color:var(--ink)}
+.site-tabs a.on{background:var(--ink);color:var(--bg)}
+.nav .nav-switch{display:none}
+@media (max-width:760px){.site-tabs{display:none}.nav .nav-switch{display:block}}
+@media (max-width:1100px) and (min-width:761px){.site-tabs a{padding:7px 10px}}

@@ -20,9 +20,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="../../assets/base.css?v=3">
-<link rel="stylesheet" href="../../assets/dot.css?v=3">
-<link rel="stylesheet" href="../../assets/biz.css?v=3">
+<link rel="stylesheet" href="../../assets/base.css?v=4">
+<link rel="stylesheet" href="../../assets/dot.css?v=4">
+<link rel="stylesheet" href="../../assets/biz.css?v=4">
 <script>
   /* Mørkt tema som standard. Har den besøgende valgt lyst, huskes det. */
   (function(){try{var t=localStorage.getItem('tema-sinanp');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();
@@ -34,8 +34,9 @@
 <div class="progress" aria-hidden="true"></div>
 <header class="site-header">
   <a class="brand" href="../../" aria-label="Sinan Polat – forside">Sinan Polat<span class="dot"></span></a>
-  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../../ydelser/" data-page aria-current="page">Ydelser</a><a href="../../cases/">Cases</a><a href="../../om/">Om mig</a><a href="../../kontakt/">Kontakt</a></nav>
+  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../../ydelser/" data-page aria-current="page">Ydelser</a><a href="../../cases/">Cases</a><a href="../../om/">Om mig</a><a href="../../kontakt/">Kontakt</a><a class="nav-switch" href="https://portfolio.sinanp.dk/">Portfolio ↗</a></nav>
   <div class="header-tools">
+    <nav class="site-tabs" aria-label="Skift side"><a class="on" href="../../" aria-current="true">Forretning</a><a href="https://portfolio.sinanp.dk/">Portfolio</a></nav>
     <a class="cv-link" href="../../kontakt/">Få et tilbud <span class="arr" aria-hidden="true">→</span></a>
     <button class="icon-btn" id="themeToggle" type="button" aria-label="Skift mellem lyst og mørkt tema">
       <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
@@ -46,7 +47,7 @@
 </header>
 <main id="indhold">
   <section class="page-hero">
-    <nav class="crumbs" aria-label="Brødkrumme"><a href="../../">Forside</a> › <a href="../../#ydelser">Ydelser</a> › <span aria-current="page">Hjemmesider</span></nav>
+    <nav class="crumbs" aria-label="Brødkrumme"><a href="../../">Forside</a> › <a href="../../ydelser/">Ydelser</a> › <span aria-current="page">Hjemmesider</span></nav>
     <div class="split">
       <div>
         <p class="eyebrow reveal">Ydelse · Hjemmesider</p>
@@ -83,21 +84,17 @@
     </div></section>
   <section class="section lead-form" id="tilbud">
     <div class="split">
-      <div class="reveal"><p class="eyebrow">Få et tilbud</p><h2>Hvad skal din nye hjemmeside kunne?</h2><p class="lead small">Skriv et par linjer, så vender jeg tilbage med et uforpligtende tilbud med fast pris.</p>
-        <ul class="hero-trust"><li>Uforpligtende</li><li>Fast pris</li><li>Svar inden for en hverdag</li></ul></div>
-      <div class="panel reveal"><form class="form" id="contactForm" novalidate>
-          <div class="field"><label for="navn">Navn</label><input id="navn" name="navn" autocomplete="name"><span class="err-msg">Skriv dit navn.</span></div>
-          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email"><span class="err-msg">Skriv en gyldig e-mail.</span></div>
-          <div class="field"><label for="telefon">Telefon <span class="opt">(valgfrit)</span></label><input id="telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel"></div>
-          <div class="field"><label for="virksomhed">Virksomhed <span class="opt">(valgfrit)</span></label><input id="virksomhed" name="virksomhed" autocomplete="organization"></div>
-          <fieldset class="full" style="border:0;padding:0;margin:0"><legend>Hvad drejer det sig om?</legend><div class="chips-pick"><label><input type="checkbox" name="ydelse" value="Hjemmeside" checked><span>Hjemmesider</span></label><label><input type="checkbox" name="ydelse" value="Webhosting"><span>Webhosting</span></label><label><input type="checkbox" name="ydelse" value="Google Ads"><span>Google Ads</span></label><label><input type="checkbox" name="ydelse" value="Motion graphics"><span>Motion graphics</span></label></div></fieldset>
-          <div class="full field"><label for="besked">Besked</label><textarea id="besked" name="besked" placeholder="Fortæl kort om din virksomhed, og hvad du har brug for."></textarea><span class="err-msg">Skriv en kort besked.</span></div>
-          <div class="full" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
-            <p class="form-note">Uforpligtende. Svar typisk inden for en hverdag.</p>
-            <button class="button magnetic" type="submit">Send og få et tilbud →</button>
+      <div class="reveal"><p class="eyebrow">Få et tilbud</p><h2>Hvad skal din nye hjemmeside kunne?</h2><p class="lead small">Vælg ydelse, skriv din e-mail, og send. Så vender jeg tilbage med et uforpligtende tilbud med fast pris.</p></div>
+      <div class="panel reveal"><form class="form quick" id="contactForm" novalidate>
+          <fieldset class="full" style="border:0;padding:0;margin:0"><legend><span class="stepn">1</span>Hvad kan jeg hjælpe med?</legend><div class="chips-pick"><label><input type="radio" name="ydelse" value="Hjemmeside" checked><span>Hjemmesider</span></label><label><input type="radio" name="ydelse" value="Webhosting"><span>Webhosting</span></label><label><input type="radio" name="ydelse" value="Google Ads"><span>Google Ads</span></label><label><input type="radio" name="ydelse" value="Motion graphics"><span>Motion graphics</span></label></div></fieldset>
+          <div class="full field"><label for="email"><span class="stepn">2</span>Din e-mail</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="navn@firma.dk"><span class="err-msg">Skriv en gyldig e-mail, så jeg kan svare dig.</span></div>
+          <div class="full field"><label for="besked">Et par ord om opgaven <span class="opt">(valgfrit)</span></label><textarea id="besked" name="besked" rows="2" placeholder="Fx: Vi er et lille firma og mangler en ny hjemmeside."></textarea></div>
+          <div class="full form-send">
+            <button class="button magnetic" type="submit">Send forespørgsel →</button>
+            <p class="form-note">Uforpligtende · Svar inden for en hverdag</p>
           </div>
         </form>
-        <p class="form-ok" id="formOk" tabindex="-1">Tak for din besked. Jeg vender tilbage hurtigst muligt.</p></div>
+        <p class="form-ok" id="formOk" tabindex="-1">Tak! Jeg vender tilbage inden for en hverdag.</p></div>
     </div>
   </section>
   <section class="section"><p class="eyebrow reveal">Andre ydelser</p><div class="related reveal"><a href="../../ydelser/webhosting/">Webhosting</a><a href="../../ydelser/google-ads/">Google Ads</a><a href="../../ydelser/motion-graphics/">Motion graphics</a></div></section>
@@ -107,7 +104,7 @@
     <div class="mini-cta">
       <h2>Skal vi tage en <em>snak</em> om hjemmesider?</h2>
       <div class="mini-actions">
-        <a class="button light magnetic" href="../../kontakt/">Få et uforpligtende tilbud →</a>
+        <a class="button light magnetic" href="#tilbud">Få et uforpligtende tilbud →</a>
         <button class="button ghost-light" type="button" id="copyMail"><span class="copy-label">sinanp2020@hotmail.com</span><span class="copy-ico" aria-hidden="true">⧉</span></button>
       </div>
     </div>
@@ -119,8 +116,8 @@
   </div>
 </footer>
 <div class="toast" role="status" aria-live="polite"></div>
-<div class="cta-bar" aria-label="Hurtig kontakt"><a class="button" href="../../kontakt/">Få et uforpligtende tilbud →</a></div>
-<script src="../../assets/site.js?v=3" defer></script>
-<script src="../../assets/dot.js?v=3" defer></script>
+<div class="cta-bar" aria-label="Hurtig kontakt"><a class="button" href="#tilbud">Få et uforpligtende tilbud →</a></div>
+<script src="../../assets/site.js?v=4" defer></script>
+<script src="../../assets/dot.js?v=4" defer></script>
 </body>
 </html>

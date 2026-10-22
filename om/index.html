@@ -20,9 +20,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="../assets/base.css?v=3">
-<link rel="stylesheet" href="../assets/dot.css?v=3">
-<link rel="stylesheet" href="../assets/biz.css?v=3">
+<link rel="stylesheet" href="../assets/base.css?v=4">
+<link rel="stylesheet" href="../assets/dot.css?v=4">
+<link rel="stylesheet" href="../assets/biz.css?v=4">
 <script>
   /* Mørkt tema som standard. Har den besøgende valgt lyst, huskes det. */
   (function(){try{var t=localStorage.getItem('tema-sinanp');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();
@@ -33,8 +33,9 @@
 <div class="progress" aria-hidden="true"></div>
 <header class="site-header">
   <a class="brand" href="../" aria-label="Sinan Polat – forside">Sinan Polat<span class="dot"></span></a>
-  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../ydelser/">Ydelser</a><a href="../cases/">Cases</a><a href="../om/" data-page aria-current="page">Om mig</a><a href="../kontakt/">Kontakt</a></nav>
+  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../ydelser/">Ydelser</a><a href="../cases/">Cases</a><a href="../om/" data-page aria-current="page">Om mig</a><a href="../kontakt/">Kontakt</a><a class="nav-switch" href="https://portfolio.sinanp.dk/">Portfolio ↗</a></nav>
   <div class="header-tools">
+    <nav class="site-tabs" aria-label="Skift side"><a class="on" href="../" aria-current="true">Forretning</a><a href="https://portfolio.sinanp.dk/">Portfolio</a></nav>
     <a class="cv-link" href="../kontakt/">Få et tilbud <span class="arr" aria-hidden="true">→</span></a>
     <button class="icon-btn" id="themeToggle" type="button" aria-label="Skift mellem lyst og mørkt tema">
       <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
@@ -58,15 +59,11 @@
       <ul class="principles reveal"><li><span>01</span>Kunden før løsningen</li><li><span>02</span>Struktur før stil</li><li><span>03</span>Budskabet skal forstås på 5 sekunder</li></ul>
     </div>
   </section>
-  <section class="section skills-section">
-    <p class="eyebrow reveal">Værktøjskassen</p>
-    <h2 class="reveal">Det arbejder jeg med</h2>
-    <div class="skills">
-      <div class="skill reveal"><span class="skill-ico" aria-hidden="true">◇</span><h3>Design og video</h3><p>Figma, Photoshop, Illustrator, InDesign, Canva, Premiere Pro, After Effects, Audition og Lightroom.</p></div>
-      <div class="skill reveal"><span class="skill-ico" aria-hidden="true">&lt;/&gt;</span><h3>Web</h3><p>HTML, CSS og JavaScript, Umbraco, Siteimprove, webtilgængelighed (WCAG), domæner, DNS og hosting.</p></div>
-      <div class="skill reveal"><span class="skill-ico" aria-hidden="true">◎</span><h3>Markedsføring og UX</h3><p>Google Ads, LinkedIn-annoncer, SEO, Mailchimp, brugerinterviews, usability-test og brugerrejser.</p></div>
+  <section class="section" style="padding-top:12px">
+    <div class="panel reveal" style="display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between">
+      <div><h2 style="margin:0 0 6px">Skal vi arbejde sammen?</h2><p class="form-note" style="font-size:1rem">Se hvad jeg har lavet, eller send en forespørgsel på under et minut.</p></div>
+      <p class="actions" style="margin:0"><a class="button magnetic" href="../kontakt/">Få et tilbud →</a><a class="button ghost magnetic" href="../cases/">Se cases</a></p>
     </div>
-    <p class="note reveal">Jeg bruger moderne værktøjer, også AI, til at arbejde hurtigere. Idéer, design og ansvar er mine.</p>
   </section>
 </main>
 <footer id="kontakt" class="contact mini">
@@ -87,7 +84,7 @@
 </footer>
 <div class="toast" role="status" aria-live="polite"></div>
 <div class="cta-bar" aria-label="Hurtig kontakt"><a class="button" href="../kontakt/">Få et uforpligtende tilbud →</a></div>
-<script src="../assets/site.js?v=3" defer></script>
-<script src="../assets/dot.js?v=3" defer></script>
+<script src="../assets/site.js?v=4" defer></script>
+<script src="../assets/dot.js?v=4" defer></script>
 </body>
 </html>

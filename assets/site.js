@@ -156,7 +156,7 @@
     form.addEventListener('submit', async e => {
       e.preventDefault();
       let first = null;
-      ['navn', 'email', 'besked'].forEach(n => {
+      ['email'].forEach(n => {
         const el = form.elements[n], bad = !el.value.trim() || (n === 'email' && !/^\S+@\S+\.\S+$/.test(el.value));
         el.closest('.field').classList.toggle('err', bad); if (bad && !first) first = el;
       });
@@ -169,7 +169,7 @@
           form.hidden = true; const ok = $('#formOk'); ok.classList.add('show'); ok.focus(); return;
         } catch (err) { /* falder tilbage til mail */ }
       }
-      const body = `Navn: ${data.get('navn')}\nE-mail: ${data.get('email')}\nTelefon: ${data.get('telefon') || '-'}\nVirksomhed: ${data.get('virksomhed') || '-'}\nYdelser: ${yd}\n\n${data.get('besked')}`;
+      const body = `E-mail: ${data.get('email')}\nDet drejer sig om: ${yd}\n\n${data.get('besked') || ''}`;
       location.href = `mailto:${MAIL}?subject=${encodeURIComponent('Henvendelse fra sinanp.dk: ' + yd)}&body=${encodeURIComponent(body)}`;
     });
     $$('input, textarea', form).forEach(el => el.addEventListener('input', () => { const f = el.closest('.field'); if (f) f.classList.remove('err'); }));
