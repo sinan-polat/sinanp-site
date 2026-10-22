@@ -271,3 +271,12 @@ a.skill p{margin-bottom:16px}
 .form-fail{padding:14px 18px;border-radius:14px;background:color-mix(in srgb,#E5484D 14%,var(--surface));margin-top:14px}
 .form-fail a{color:inherit;font-weight:600}
 .form button[disabled]{opacity:.7;cursor:progress}
+
+/* ---------- v9: diskret mobil-footer (kun navn og år) ---------- */
+@media (max-width:640px){
+  .contact.mini{margin-top:40px;padding:16px 20px calc(16px + env(safe-area-inset-bottom));border-radius:0;background:transparent;border-top:1px solid var(--line);color:var(--muted)}
+  .contact.mini .mini-cta,.contact.mini .mini-foot nav{display:none}
+  .contact.mini .mini-foot{display:flex;justify-content:space-between;align-items:center;padding:0;border:0}
+  .contact.mini .foot-brand{font-size:1rem;color:var(--ink)}
+  .contact.mini .fine-mini{color:var(--muted);font-size:.85rem}
+}
