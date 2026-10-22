@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="../../assets/base.css?v=10">
-<link rel="stylesheet" href="../../assets/dot.css?v=10">
-<link rel="stylesheet" href="../../assets/biz.css?v=10">
+<link rel="stylesheet" href="../../assets/base.css?v=11">
+<link rel="stylesheet" href="../../assets/dot.css?v=11">
+<link rel="stylesheet" href="../../assets/biz.css?v=11">
 <script>
   /* Mørkt tema som standard. Har den besøgende valgt lyst, huskes det. */
   (function(){try{var t=localStorage.getItem('tema-sinanp');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();
@@ -77,11 +77,11 @@
           <div class="full field"><label for="besked">Et par ord om opgaven <span class="opt">(valgfrit)</span></label><textarea id="besked" name="besked" rows="2" placeholder="Fx: Vi er et lille firma og mangler en ny hjemmeside."></textarea></div>
           <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div class="full form-send">
-            <button class="button magnetic" type="submit">Send forespørgsel →</button>
-            <p class="form-note">Uforpligtende · Svar inden for en hverdag</p>
+            <button class="button send-btn" type="submit"><span class="send-label">Send forespørgsel</span><span class="send-arr" aria-hidden="true">→</span><span class="spinner" aria-hidden="true"></span></button>
+            <p class="form-note" id="formStatus" aria-live="polite">Uforpligtende · Svar inden for en hverdag</p>
           </div>
         </form>
-        <p class="form-ok" id="formOk" tabindex="-1">✓ Tak, din forespørgsel er sendt. Jeg svarer inden for en hverdag.</p>
+        <div class="form-ok" id="formOk" tabindex="-1" role="status"><span class="ok-ico" aria-hidden="true">✓</span><div><b>Tak, din forespørgsel er sendt</b><p>Jeg svarer inden for en hverdag på <span id="okMail">din mail</span>.</p><button type="button" class="link-btn" id="formAgain">Send en ny forespørgsel</button></div></div>
         <p class="form-fail" id="formFail" tabindex="-1" hidden>Beskeden kunne ikke sendes lige nu. Prøv igen, eller skriv direkte til <a href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a>.</p></div>
     </div>
   </section>
@@ -105,7 +105,7 @@
 </footer>
 <div class="toast" role="status" aria-live="polite"></div>
 <div class="cta-bar" aria-label="Hurtig kontakt"><a class="button" href="#tilbud">Få et uforpligtende tilbud →</a></div>
-<script src="../../assets/site.js?v=10" defer></script>
-<script src="../../assets/dot.js?v=10" defer></script>
+<script src="../../assets/site.js?v=11" defer></script>
+<script src="../../assets/dot.js?v=11" defer></script>
 </body>
 </html>

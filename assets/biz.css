@@ -280,3 +280,28 @@ a.skill p{margin-bottom:16px}
   .contact.mini .foot-brand{font-size:1rem;color:var(--ink)}
   .contact.mini .fine-mini{color:var(--muted);font-size:.85rem}
 }
+
+/* ---------- v10: send-knap og kvittering ---------- */
+.form[hidden]{display:none!important}
+.send-btn{position:relative;min-width:220px;justify-content:center;transform:none!important}
+.send-btn .send-arr{transition:transform .25s var(--ease)}
+.send-btn:hover .send-arr{transform:translateX(4px)}
+.send-btn .spinner{display:none;width:18px;height:18px;border-radius:50%;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;animation:spin .8s linear infinite}
+.send-btn.loading .spinner{display:inline-block}
+.send-btn.loading .send-arr{display:none}
+.send-btn:disabled,.send-btn:disabled:hover{background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important;opacity:.85;cursor:progress;box-shadow:none}
+.send-btn:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 55%,transparent);outline-offset:3px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.send-btn .spinner{animation-duration:2s}}
+#formStatus{min-height:1.3em}
+.form-ok{display:none;gap:14px;align-items:flex-start;padding:22px;border-radius:16px;background:color-mix(in srgb,#2DBE6C 13%,var(--surface));border:1px solid color-mix(in srgb,#2DBE6C 40%,var(--line));font-weight:400;outline:0}
+.form-ok.show{display:flex;animation:okIn .4s var(--ease)}
+.form-ok .ok-ico{flex:0 0 36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#2DBE6C;color:#fff;font-weight:700}
+.form-ok b{display:block;font-size:1.1rem;margin-bottom:4px}
+.form-ok p{margin:0 0 10px;color:var(--muted)}
+.form-ok #okMail{color:var(--ink);font-weight:600;overflow-wrap:anywhere}
+.link-btn{background:none;border:0;padding:0;font:600 .95rem var(--sans);color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+@keyframes okIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.form .field input{min-height:50px}
+.form input,.form textarea{font-size:16px} /* undgår zoom på iPhone */
+@media (max-width:640px){.send-btn{width:100%;min-width:0}.form-send{gap:10px}.form-send .form-note{width:100%;text-align:center}}

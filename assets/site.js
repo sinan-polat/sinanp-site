@@ -167,9 +167,10 @@
       if (first) { first.focus(); return; }
       if (form.elements._honey && form.elements._honey.value) return; // spam-fælde
       const data = new FormData(form), yd = data.getAll('ydelse').join(', ') || 'Ikke valgt';
-      const btn = $('button[type="submit"]', form), label = btn.innerHTML, fail = $('#formFail');
-      btn.disabled = true; btn.innerHTML = 'Sender …'; if (fail) fail.hidden = true;
-      const slow = setTimeout(() => { btn.innerHTML = 'Sender stadig … et øjeblik'; }, 4000);
+      const btn = $('button[type="submit"]', form), fail = $('#formFail'), status = $('#formStatus'), note = status ? status.textContent : '';
+      const setBusy = on => { btn.disabled = on; btn.classList.toggle('loading', on); btn.setAttribute('aria-busy', on); $('.send-label', btn).textContent = on ? 'Sender' : 'Send forespørgsel'; if (status) status.textContent = on ? 'Sender din forespørgsel …' : note; };
+      setBusy(true); if (fail) fail.hidden = true;
+      const slow = setTimeout(() => { if (status) status.textContent = 'Det tager lidt længere end normalt. Vent et øjeblik …'; }, 4000);
       const ctrl = new AbortController(), stop = setTimeout(() => ctrl.abort(), 60000);
       const fields = { email: data.get('email'), 'Det drejer sig om': yd, Besked: data.get('besked') || '(ingen besked)', Side: location.pathname };
       const subject = 'Ny forespørgsel fra sinanp.dk: ' + yd;
@@ -183,16 +184,21 @@
           body: JSON.stringify(payload)
         });
         const res = await r.json().catch(() => ({}));
-        clearTimeout(slow); clearTimeout(stop);
         if (!r.ok || res.success === false || res.success === 'false') throw 0;
-        form.hidden = true; const ok = $('#formOk'); ok.classList.add('show'); ok.focus();
+        clearTimeout(slow); clearTimeout(stop);
+        const okMail = $('#okMail'); if (okMail) okMail.textContent = data.get('email');
+        form.reset(); setBusy(false);
+        $$('.field.err', form).forEach(f => f.classList.remove('err'));
+        form.hidden = true; const ok = $('#formOk'); ok.classList.add('show'); ok.focus({ preventScroll: true });
+        ok.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
         track('generate_lead', { side: location.pathname });
       } catch (err) {
-        clearTimeout(slow); clearTimeout(stop);
-        btn.disabled = false; btn.innerHTML = label;
+        clearTimeout(slow); clearTimeout(stop); setBusy(false);
         if (fail) { fail.hidden = false; fail.focus(); }
       }
     });
+    const again = $('#formAgain');
+    if (again) again.addEventListener('click', () => { $('#formOk').classList.remove('show'); form.hidden = false; form.elements.email.focus(); });
     $$('input, textarea', form).forEach(el => el.addEventListener('input', () => { const f = el.closest('.field'); if (f) f.classList.remove('err'); }));
   }
 
