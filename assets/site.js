@@ -70,7 +70,7 @@
   /* ---------- Roterende ord ---------- */
   const word = $('.rotator-word');
   if (word && !reduceMotion) {
-    const words = JSON.parse(word.dataset.words || '[]'); let wi = 0;
+    const words = (word.dataset.words || '').split('|').filter(Boolean); let wi = 0;
     // usynlige kopier af alle ord i samme gittercelle, så bredden passer til det længste ord
     words.forEach(w => { const g = document.createElement('span'); g.className = 'rotator-word'; g.textContent = w; g.setAttribute('aria-hidden', 'true'); g.style.visibility = 'hidden'; word.parentElement.appendChild(g); });
     if (words.length) setInterval(() => {

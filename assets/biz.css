@@ -139,3 +139,21 @@ a.skill p{margin-bottom:16px}
   .cta-bar.hide{transform:translateY(140%);opacity:0;pointer-events:none}
   body{padding-bottom:84px}
 }
+
+/* ---------- v4: mini-footer ---------- */
+.contact.mini{margin-top:clamp(48px,7vw,80px);padding:clamp(32px,4vw,44px) 24px 20px;border-radius:24px 24px 0 0}
+.mini-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1)}
+.mini-cta h2{font-size:clamp(1.6rem,3vw,2.2rem);margin:0;color:#F5F2EC}
+.mini-actions{display:flex;flex-wrap:wrap;gap:10px}
+.mini-actions .button{padding:12px 20px;font-size:.95rem}
+.mini-foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding-top:16px;font-size:.88rem}
+.mini-foot .foot-brand{font-size:1.15rem;text-decoration:none}
+.mini-foot nav{display:flex;flex-wrap:wrap;gap:6px 18px;flex:1}
+.mini-foot nav a{color:#B9BDC6;text-decoration:none}
+.mini-foot nav a:hover{color:#FF7A50}
+.fine-mini{color:#8A8F99}
+@media (max-width:640px){
+  .mini-actions{width:100%;display:grid}
+  .mini-actions .button{justify-content:center}
+  .mini-foot nav{flex-basis:100%;order:3}
+}
