@@ -240,3 +240,31 @@ a.skill p{margin-bottom:16px}
 @media (max-width:640px){.hero-menu{padding:6px 16px 10px}.hero-menu a{padding:12px 0}.hero.no-visual .scroll-hint{display:none}}
 /* v7: uden brødkrummer */
 .page-hero.tight{padding-top:clamp(28px,4vw,48px)}
+
+/* ---------- v8: mobil-footer og smalle telefoner ---------- */
+@media (max-width:760px){
+  body{padding-bottom:0}
+  .contact.mini{padding-bottom:calc(18px + env(safe-area-inset-bottom))}
+}
+@media (max-width:640px){
+  .contact.mini{border-radius:20px 20px 0 0;padding-top:28px}
+  .contact.mini:not(:has(.mini-cta)){padding-top:18px}
+  .mini-cta{gap:16px;padding-bottom:20px}
+  .mini-cta h2{font-size:1.6rem}
+  .mini-foot{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px 10px;padding-top:16px}
+  .mini-foot nav{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0 16px;order:0}
+  .mini-foot nav a{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.95rem}
+  .mini-foot .fine-mini{justify-self:end}
+  .mini-actions .button{min-height:50px}
+  #copyMail .copy-label{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+}
+@media (max-width:400px){
+  .site-header{gap:8px}
+  .brand{font-size:1.15rem}
+  .cv-link{padding:0 12px;font-size:.8rem;height:38px}
+  .header-tools{gap:6px}
+  .header-tools .icon-btn{width:38px;height:38px}
+}
+@media (max-width:350px){.cv-link .arr{display:none}#themeToggle{display:none}}
+@media (max-width:640px){.mini-foot nav{grid-row:2}.mini-foot nav a{padding:8px 0}}
+@media (max-width:380px){.cv-link .arr{display:none}.brand{font-size:1.08rem}}
