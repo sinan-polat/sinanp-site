@@ -24,9 +24,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="../../assets/base.css?v=7">
-<link rel="stylesheet" href="../../assets/dot.css?v=7">
-<link rel="stylesheet" href="../../assets/biz.css?v=7">
+<link rel="stylesheet" href="../../assets/base.css?v=8">
+<link rel="stylesheet" href="../../assets/dot.css?v=8">
+<link rel="stylesheet" href="../../assets/biz.css?v=8">
 <script>
   /* Mørkt tema som standard. Har den besøgende valgt lyst, huskes det. */
   (function(){try{var t=localStorage.getItem('tema-sinanp');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();
@@ -92,12 +92,14 @@
           <fieldset class="full" style="border:0;padding:0;margin:0"><legend><span class="stepn">1</span>Hvad kan jeg hjælpe med?</legend><div class="chips-pick"><label><input type="radio" name="ydelse" value="Hjemmeside"><span>Hjemmesider</span></label><label><input type="radio" name="ydelse" value="Webhosting" checked><span>Webhosting</span></label><label><input type="radio" name="ydelse" value="Google Ads"><span>Google Ads</span></label><label><input type="radio" name="ydelse" value="Motion graphics"><span>Motion graphics</span></label></div></fieldset>
           <div class="full field"><label for="email"><span class="stepn">2</span>Din e-mail</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="navn@firma.dk"><span class="err-msg">Skriv en gyldig e-mail, så jeg kan svare dig.</span></div>
           <div class="full field"><label for="besked">Et par ord om opgaven <span class="opt">(valgfrit)</span></label><textarea id="besked" name="besked" rows="2" placeholder="Fx: Vi er et lille firma og mangler en ny hjemmeside."></textarea></div>
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div class="full form-send">
             <button class="button magnetic" type="submit">Send forespørgsel →</button>
             <p class="form-note">Uforpligtende · Svar inden for en hverdag</p>
           </div>
         </form>
-        <p class="form-ok" id="formOk" tabindex="-1">Tak! Jeg vender tilbage inden for en hverdag.</p></div>
+        <p class="form-ok" id="formOk" tabindex="-1">✓ Tak, din forespørgsel er sendt. Jeg svarer inden for en hverdag.</p>
+        <p class="form-fail" id="formFail" tabindex="-1" hidden>Beskeden kunne ikke sendes lige nu. Prøv igen, eller skriv direkte til <a href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a>.</p></div>
     </div>
   </section>
   <section class="section"><p class="eyebrow reveal">Andre ydelser</p><div class="related reveal"><a href="../../ydelser/hjemmeside/">Hjemmesider</a><a href="../../ydelser/google-ads/">Google Ads</a><a href="../../ydelser/motion-graphics/">Motion graphics</a></div></section>
@@ -120,7 +122,7 @@
 </footer>
 <div class="toast" role="status" aria-live="polite"></div>
 <div class="cta-bar" aria-label="Hurtig kontakt"><a class="button" href="#tilbud">Få et uforpligtende tilbud →</a></div>
-<script src="../../assets/site.js?v=7" defer></script>
-<script src="../../assets/dot.js?v=7" defer></script>
+<script src="../../assets/site.js?v=8" defer></script>
+<script src="../../assets/dot.js?v=8" defer></script>
 </body>
 </html>

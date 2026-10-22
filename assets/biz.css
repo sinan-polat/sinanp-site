@@ -268,3 +268,6 @@ a.skill p{margin-bottom:16px}
 @media (max-width:350px){.cv-link .arr{display:none}#themeToggle{display:none}}
 @media (max-width:640px){.mini-foot nav{grid-row:2}.mini-foot nav a{padding:8px 0}}
 @media (max-width:380px){.cv-link .arr{display:none}.brand{font-size:1.08rem}}
+.form-fail{padding:14px 18px;border-radius:14px;background:color-mix(in srgb,#E5484D 14%,var(--surface));margin-top:14px}
+.form-fail a{color:inherit;font-weight:600}
+.form button[disabled]{opacity:.7;cursor:progress}

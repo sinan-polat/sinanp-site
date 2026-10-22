@@ -10,9 +10,10 @@
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = matchMedia('(pointer: fine)').matches;
 
-  /* Indsæt formularens adresse fra Formspree her (fx 'https://formspree.io/f/abcdwxyz').
-     Står den tom, åbner formularen brugerens mailprogram med beskeden udfyldt. */
-  const FORM_ENDPOINT = '';
+  /* Formularen sendes direkte fra siden via FormSubmit (formsubmit.co) til din mail.
+     Første gang sender FormSubmit en aktiveringsmail til dig: klik "Activate Form".
+     Efter aktivering får du en hemmelig kode; erstat mailen herunder med den, så din mail ikke står i koden. */
+  const FORM_ENDPOINT = 'https://formsubmit.co/ajax/sinanp2020@hotmail.com';
   const MAIL = 'sinanp2020@hotmail.com';
 
   /* ---------- Tema: mørkt som standard, lyst kan vælges ---------- */
@@ -161,16 +162,29 @@
         el.closest('.field').classList.toggle('err', bad); if (bad && !first) first = el;
       });
       if (first) { first.focus(); return; }
+      if (form.elements._honey && form.elements._honey.value) return; // spam-fælde
       const data = new FormData(form), yd = data.getAll('ydelse').join(', ') || 'Ikke valgt';
-      if (FORM_ENDPOINT) {
-        try {
-          const r = await fetch(FORM_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-          if (!r.ok) throw 0;
-          form.hidden = true; const ok = $('#formOk'); ok.classList.add('show'); ok.focus(); return;
-        } catch (err) { /* falder tilbage til mail */ }
+      const btn = $('button[type="submit"]', form), label = btn.innerHTML, fail = $('#formFail');
+      btn.disabled = true; btn.innerHTML = 'Sender …'; if (fail) fail.hidden = true;
+      try {
+        const r = await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            _subject: 'Ny forespørgsel fra sinanp.dk: ' + yd,
+            _template: 'table', _captcha: 'false',
+            email: data.get('email'), 'Det drejer sig om': yd,
+            Besked: data.get('besked') || '(ingen besked)', Side: location.pathname
+          })
+        });
+        const res = await r.json().catch(() => ({}));
+        if (!r.ok || res.success === false || res.success === 'false') throw 0;
+        form.hidden = true; const ok = $('#formOk'); ok.classList.add('show'); ok.focus();
+        track('generate_lead', { side: location.pathname });
+      } catch (err) {
+        btn.disabled = false; btn.innerHTML = label;
+        if (fail) { fail.hidden = false; fail.focus(); }
       }
-      const body = `E-mail: ${data.get('email')}\nDet drejer sig om: ${yd}\n\n${data.get('besked') || ''}`;
-      location.href = `mailto:${MAIL}?subject=${encodeURIComponent('Henvendelse fra sinanp.dk: ' + yd)}&body=${encodeURIComponent(body)}`;
     });
     $$('input, textarea', form).forEach(el => el.addEventListener('input', () => { const f = el.closest('.field'); if (f) f.classList.remove('err'); }));
   }
@@ -192,7 +206,6 @@
   const track = (name, params) => { try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) {} };
   $$('a[href^="tel:"]').forEach(a => a.addEventListener('click', () => track('klik_telefon')));
   $$('a[href^="mailto:"], #copyMail').forEach(a => a.addEventListener('click', () => track('klik_mail')));
-  if (formEl) formEl.addEventListener('submit', () => { if (!$$('.field.err', formEl).length) track('generate_lead', { side: location.pathname }); });
 
   $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 })();
