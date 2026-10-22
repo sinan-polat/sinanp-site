@@ -14,6 +14,9 @@
      Første gang sender FormSubmit en aktiveringsmail til dig: klik "Activate Form".
      Efter aktivering får du en hemmelig kode; erstat mailen herunder med den, så din mail ikke står i koden. */
   const FORM_ENDPOINT = 'https://formsubmit.co/ajax/sinanp2020@hotmail.com';
+  /* Hurtigere og mere stabilt: Web3Forms. Hent en gratis nøgle på web3forms.com (skriv din mail, nøglen kommer på mail)
+     og sæt den ind her. Når nøglen står her, bruges Web3Forms i stedet for FormSubmit. */
+  const WEB3FORMS_KEY = '';
   const MAIL = 'sinanp2020@hotmail.com';
 
   /* ---------- Tema: mørkt som standard, lyst kan vælges ---------- */
@@ -166,22 +169,26 @@
       const data = new FormData(form), yd = data.getAll('ydelse').join(', ') || 'Ikke valgt';
       const btn = $('button[type="submit"]', form), label = btn.innerHTML, fail = $('#formFail');
       btn.disabled = true; btn.innerHTML = 'Sender …'; if (fail) fail.hidden = true;
+      const slow = setTimeout(() => { btn.innerHTML = 'Sender stadig … et øjeblik'; }, 4000);
+      const ctrl = new AbortController(), stop = setTimeout(() => ctrl.abort(), 60000);
+      const fields = { email: data.get('email'), 'Det drejer sig om': yd, Besked: data.get('besked') || '(ingen besked)', Side: location.pathname };
+      const subject = 'Ny forespørgsel fra sinanp.dk: ' + yd;
+      const payload = WEB3FORMS_KEY
+        ? { access_key: WEB3FORMS_KEY, subject, from_name: 'sinanp.dk', replyto: data.get('email'), ...fields }
+        : { _subject: subject, _template: 'table', _captcha: 'false', _replyto: data.get('email'), ...fields };
       try {
-        const r = await fetch(FORM_ENDPOINT, {
-          method: 'POST',
+        const r = await fetch(WEB3FORMS_KEY ? 'https://api.web3forms.com/submit' : FORM_ENDPOINT, {
+          method: 'POST', signal: ctrl.signal,
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({
-            _subject: 'Ny forespørgsel fra sinanp.dk: ' + yd,
-            _template: 'table', _captcha: 'false',
-            email: data.get('email'), 'Det drejer sig om': yd,
-            Besked: data.get('besked') || '(ingen besked)', Side: location.pathname
-          })
+          body: JSON.stringify(payload)
         });
         const res = await r.json().catch(() => ({}));
+        clearTimeout(slow); clearTimeout(stop);
         if (!r.ok || res.success === false || res.success === 'false') throw 0;
         form.hidden = true; const ok = $('#formOk'); ok.classList.add('show'); ok.focus();
         track('generate_lead', { side: location.pathname });
       } catch (err) {
+        clearTimeout(slow); clearTimeout(stop);
         btn.disabled = false; btn.innerHTML = label;
         if (fail) { fail.hidden = false; fail.focus(); }
       }
