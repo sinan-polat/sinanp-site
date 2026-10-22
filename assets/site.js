@@ -1,78 +1,177 @@
-/* sinanp.dk – lidt interaktivitet, ingen frameworks */
+/* =========================================================
+   sinanp.dk – interaktivitet (samme greb som portfolien)
+   ========================================================= */
 (() => {
   'use strict';
+  document.documentElement.classList.add('js');
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const root = document.documentElement;
-  root.classList.add('js');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = matchMedia('(pointer: fine)').matches;
 
   /* Indsæt formularens adresse fra Formspree her (fx 'https://formspree.io/f/abcdwxyz').
-     Står den tom, åbner formularen i stedet brugerens mailprogram med beskeden udfyldt. */
+     Står den tom, åbner formularen brugerens mailprogram med beskeden udfyldt. */
   const FORM_ENDPOINT = '';
   const MAIL = 'sinanp2020@hotmail.com';
 
-  // header-kant ved scroll
-  const header = $('.site-header');
-  const onScroll = () => header.classList.toggle('scrolled', scrollY > 8);
+  /* ---------- Tema: mørkt som standard, lyst kan vælges ---------- */
+  const isDark = () => root.dataset.theme !== 'light';
+  const tt = $('#themeToggle');
+  if (tt) tt.addEventListener('click', () => {
+    const next = isDark() ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('tema-sinanp', next); } catch (e) {}
+    $('meta[name="theme-color"]').content = next === 'dark' ? '#101114' : '#F5F2EC';
+  });
+
+  /* ---------- Mobilmenu med mørk baggrund ---------- */
+  const menuBtn = $('#menuBtn'), nav = $('#nav');
+  if (menuBtn && nav) {
+    const scrim = document.createElement('div'); scrim.className = 'menu-scrim'; document.body.appendChild(scrim);
+    const setMenu = open => { nav.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', open); root.classList.toggle('menu-open', open); };
+    menuBtn.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+    scrim.addEventListener('click', () => setMenu(false));
+    addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); menuBtn.focus(); } });
+    $$('a', nav).forEach(a => a.addEventListener('click', () => setMenu(false)));
+  }
+
+  /* ---------- Interne ankre: blød scroll ---------- */
+  $$('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+    const id = a.getAttribute('href').slice(1), t = id && document.getElementById(id);
+    if (!t) return;
+    e.preventDefault(); t.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+  }));
+
+  /* ---------- Scroll: progress, header og aktiv menu ---------- */
+  const bar = $('.progress'), header = $('.site-header');
+  const navLinks = $$('.nav a[data-sec]');
+  const pageActive = $('.nav a[data-page]');
+  const onScroll = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    if (bar) bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+    header.classList.toggle('scrolled', scrollY > 10);
+    if (pageActive) return; // undersider: menupunktet står fast
+    let cur = '';
+    navLinks.forEach(a => { const s = document.getElementById(a.dataset.sec); if (s && s.getBoundingClientRect().top < innerHeight * .4) cur = a.dataset.sec; });
+    navLinks.forEach(a => a.classList.toggle('active', a.dataset.sec === cur));
+  };
+  if (pageActive) pageActive.classList.add('active');
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  // mobilmenu med mørk baggrund
-  const btn = $('.menu-btn'), nav = $('.nav');
-  if (btn && nav) {
-    const scrim = document.createElement('div'); scrim.className = 'menu-scrim'; document.body.appendChild(scrim);
-    const set = open => { nav.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); root.classList.toggle('menu-open', open); };
-    btn.addEventListener('click', () => set(!nav.classList.contains('open')));
-    scrim.addEventListener('click', () => set(false));
-    addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { set(false); btn.focus(); } });
-    $$('a', nav).forEach(a => a.addEventListener('click', () => set(false)));
+  /* ---------- Reveal ---------- */
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('seen'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  $$('.reveal').forEach(el => {
+    const sibs = $$(':scope > .reveal', el.parentElement);
+    el.style.setProperty('--d', `${Math.min(sibs.indexOf(el), 5) * .08}s`);
+    io.observe(el);
+  });
+
+  /* ---------- Roterende ord ---------- */
+  const word = $('.rotator-word');
+  if (word && !reduceMotion) {
+    const words = JSON.parse(word.dataset.words || '[]'); let wi = 0;
+    if (words.length) setInterval(() => {
+      word.classList.add('out');
+      setTimeout(() => {
+        wi = (wi + 1) % words.length; word.textContent = words[wi];
+        word.classList.remove('out'); word.classList.add('in');
+        requestAnimationFrame(() => requestAnimationFrame(() => word.classList.remove('in')));
+      }, 350);
+    }, 2600);
   }
 
-  // elementer glider ind
-  if (!reduce && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('seen'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
-    $$('.reveal').forEach(el => io.observe(el));
-  } else $$('.reveal').forEach(el => el.classList.add('seen'));
-
-  // videoer: spil kun, når de er i billedet (og ikke ved "reducer bevægelse")
-  const vids = $$('video[data-autoplay]');
-  if (reduce) vids.forEach(v => { v.removeAttribute('autoplay'); v.controls = true; });
-  else if (vids.length) {
-    const vio = new IntersectionObserver(es => es.forEach(e => { e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause(); }), { threshold: .35 });
-    vids.forEach(v => vio.observe(v));
+  /* ---------- Hero: prikfelt ---------- */
+  const canvas = $('.hero-field'), hero = $('.hero');
+  if (canvas && canvas.getContext && hero) {
+    const ctx = canvas.getContext('2d');
+    let w, h, dpr, dots = [], mouse = { x: -999, y: -999 }, raf = null; const t0 = performance.now(), GAP = 30;
+    const col = v => getComputedStyle(root).getPropertyValue(v).trim();
+    function draw(now) {
+      const ink = col('--ink'), acc = col('--accent'), t = (now - t0) / 1000;
+      ctx.clearRect(0, 0, w, h);
+      for (const d of dots) {
+        const dx = d.x - mouse.x, dy = d.y - mouse.y, dist = Math.hypot(dx, dy), near = Math.max(0, 1 - dist / 150);
+        const wave = reduceMotion ? 0 : (Math.sin(d.x * .012 + t * .8) + Math.cos(d.y * .015 + t * .6)) * .25 + .5;
+        const r = 1 + near * 3.2 + wave * .5, push = near * 10;
+        ctx.globalAlpha = .08 + wave * .07 + near * .6; ctx.fillStyle = near > .05 ? acc : ink;
+        ctx.beginPath(); ctx.arc(d.x + (dist ? dx / dist : 0) * push, d.y + (dist ? dy / dist : 0) * push, r, 0, Math.PI * 2); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+    const resize = () => {
+      dpr = Math.min(devicePixelRatio || 1, 2); w = hero.clientWidth; h = hero.clientHeight;
+      canvas.width = w * dpr; canvas.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      dots = []; for (let y = GAP / 2; y < h; y += GAP) for (let x = GAP / 2; x < w; x += GAP) dots.push({ x, y });
+      draw(performance.now());
+    };
+    let visible = true;
+    const loop = now => { draw(now); raf = visible && !reduceMotion ? requestAnimationFrame(loop) : null; };
+    new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible && !raf && !reduceMotion) raf = requestAnimationFrame(loop); }).observe(hero);
+    hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; if (reduceMotion) draw(performance.now()); });
+    hero.addEventListener('pointerleave', () => { mouse.x = mouse.y = -999; });
+    addEventListener('resize', resize); resize();
+    if (tt) tt.addEventListener('click', () => draw(performance.now()));
   }
 
-  // kontaktformular
+  /* ---------- Parallax på chips og magnetiske knapper ---------- */
+  const pv = $('[data-parallax]');
+  if (pv && finePointer && !reduceMotion) hero.addEventListener('pointermove', e => {
+    const cx = e.clientX / innerWidth - .5, cy = e.clientY / innerHeight - .5;
+    $$('.chip', pv).forEach(c => { const d = +c.dataset.depth; c.style.transform = `translate(${cx * d}px, ${cy * d}px)`; });
+  });
+  if (finePointer && !reduceMotion) $$('.magnetic').forEach(b => {
+    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .18}px, ${(e.clientY - r.top - r.height / 2) * .3}px)`; });
+    b.addEventListener('pointerleave', () => { b.style.transform = ''; });
+  });
+
+  /* ---------- Kort: lys der følger musen ---------- */
+  if (finePointer && !reduceMotion) $$('.skill, .proto-shot').forEach(c => {
+    c.addEventListener('pointermove', e => { const r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) / r.width * 100 + '%'); c.style.setProperty('--my', (e.clientY - r.top) / r.height * 100 + '%'); });
+  });
+
+  /* ---------- Videoer ---------- */
+  const mvids = $$('.mvid');
+  const setSound = (btn, on) => { btn.setAttribute('aria-pressed', on); btn.setAttribute('aria-label', on ? 'Slå lyd fra' : 'Slå lyd til'); };
+  const quietOthers = keep => mvids.forEach(v => { if (v === keep) return; if (v.hasAttribute('data-autoplay')) { v.muted = true; const b = v.parentElement.querySelector('.msound'); if (b) setSound(b, false); } else if (!v.paused) v.pause(); });
+  if (reduceMotion) mvids.forEach(v => { if (!v.hasAttribute('data-autoplay')) return; v.removeAttribute('data-autoplay'); v.controls = true; const b = v.parentElement.querySelector('.msound'); if (b) b.remove(); });
+  const auto = mvids.filter(v => v.hasAttribute('data-autoplay'));
+  if (auto.length) { const vio = new IntersectionObserver(es => es.forEach(e => { e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause(); }), { threshold: .35 }); auto.forEach(v => vio.observe(v)); }
+  $$('.msound').forEach(btn => btn.addEventListener('click', () => { const v = btn.parentElement.querySelector('video'), on = v.muted; if (on) { quietOthers(v); v.currentTime = 0; } v.muted = !on; setSound(btn, on); v.play().catch(() => {}); }));
+  mvids.forEach(v => v.addEventListener('play', () => { if (!v.muted) quietOthers(v); }));
+
+  /* ---------- Kopiér e-mail ---------- */
+  const toast = $('.toast');
+  const showToast = msg => { if (!toast) return; toast.textContent = msg; toast.classList.add('show'); clearTimeout(showToast.t); showToast.t = setTimeout(() => toast.classList.remove('show'), 2200); };
+  const cm = $('#copyMail');
+  if (cm) cm.addEventListener('click', async () => { try { await navigator.clipboard.writeText(MAIL); showToast('E-mail kopieret ✓'); } catch (e) { location.href = 'mailto:' + MAIL; } });
+
+  /* ---------- Kontaktformular ---------- */
   const form = $('#contactForm');
   if (form) {
     const pre = new URLSearchParams(location.search).get('ydelse');
-    if (pre) { const c = $(`input[name="ydelse"][value="${CSS.escape(pre)}"]`, form); if (c) c.checked = true; }
+    if (pre) $$('input[name="ydelse"]', form).forEach(c => { if (c.value === pre) c.checked = true; });
     form.addEventListener('submit', async e => {
       e.preventDefault();
-      const need = ['navn', 'email', 'besked'];
       let first = null;
-      need.forEach(n => {
-        const el = form.elements[n], wrap = el.closest('.field');
-        const bad = !el.value.trim() || (n === 'email' && !/^\S+@\S+\.\S+$/.test(el.value));
-        wrap.classList.toggle('err', bad);
-        if (bad && !first) first = el;
+      ['navn', 'email', 'besked'].forEach(n => {
+        const el = form.elements[n], bad = !el.value.trim() || (n === 'email' && !/^\S+@\S+\.\S+$/.test(el.value));
+        el.closest('.field').classList.toggle('err', bad); if (bad && !first) first = el;
       });
       if (first) { first.focus(); return; }
-      const data = new FormData(form);
-      const ydelser = data.getAll('ydelse').join(', ') || 'Ikke valgt';
+      const data = new FormData(form), yd = data.getAll('ydelse').join(', ') || 'Ikke valgt';
       if (FORM_ENDPOINT) {
         try {
           const r = await fetch(FORM_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-          if (!r.ok) throw new Error();
-          form.hidden = true; $('#formOk').classList.add('show'); $('#formOk').focus(); return;
+          if (!r.ok) throw 0;
+          form.hidden = true; const ok = $('#formOk'); ok.classList.add('show'); ok.focus(); return;
         } catch (err) { /* falder tilbage til mail */ }
       }
-      const body = `Navn: ${data.get('navn')}\nE-mail: ${data.get('email')}\nTelefon: ${data.get('telefon') || '-'}\nVirksomhed: ${data.get('virksomhed') || '-'}\nYdelser: ${ydelser}\n\n${data.get('besked')}`;
-      location.href = `mailto:${MAIL}?subject=${encodeURIComponent('Henvendelse fra sinanp.dk: ' + ydelser)}&body=${encodeURIComponent(body)}`;
+      const body = `Navn: ${data.get('navn')}\nE-mail: ${data.get('email')}\nTelefon: ${data.get('telefon') || '-'}\nVirksomhed: ${data.get('virksomhed') || '-'}\nYdelser: ${yd}\n\n${data.get('besked')}`;
+      location.href = `mailto:${MAIL}?subject=${encodeURIComponent('Henvendelse fra sinanp.dk: ' + yd)}&body=${encodeURIComponent(body)}`;
     });
-    $$('input, textarea', form).forEach(el => el.addEventListener('input', () => el.closest('.field') && el.closest('.field').classList.remove('err')));
+    $$('input, textarea', form).forEach(el => el.addEventListener('input', () => { const f = el.closest('.field'); if (f) f.classList.remove('err'); }));
   }
 
-  // årstal i footer
   $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 })();

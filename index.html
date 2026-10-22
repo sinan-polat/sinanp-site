@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="da">
+<html lang="da" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,143 +14,174 @@
 <meta property="og:url" content="https://sinanp.dk/">
 <meta property="og:image" content="https://sinanp.dk/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F5F2EC">
+<meta name="theme-color" content="#101114">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=1">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://sinanp.dk/#business", "name": "Sinan Polat", "url": "https://sinanp.dk/", "image": "https://sinanp.dk/assets/img/og.jpg", "logo": "https://sinanp.dk/assets/img/apple-touch-icon.png", "description": "Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder.", "email": "sinanp2020@hotmail.com", "telephone": "+4550584245", "areaServed": "DK", "address": {"@type": "PostalAddress", "addressLocality": "Kokkedal", "addressCountry": "DK"}, "founder": {"@id": "https://sinanp.dk/#sinan"}, "sameAs": ["https://www.linkedin.com/in/sinan-polat-sp"], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Ydelser", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hjemmesider", "url": "https://sinanp.dk/ydelser/hjemmeside/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Webhosting", "url": "https://sinanp.dk/ydelser/webhosting/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Google Ads", "url": "https://sinanp.dk/ydelser/google-ads/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Motion graphics", "url": "https://sinanp.dk/ydelser/motion-graphics/"}}]}}, {"@type": "Person", "@id": "https://sinanp.dk/#sinan", "name": "Sinan Polat", "jobTitle": "Multimediedesigner", "url": "https://sinanp.dk/", "sameAs": ["https://www.linkedin.com/in/sinan-polat-sp"]}, {"@type": "WebSite", "@id": "https://sinanp.dk/#website", "url": "https://sinanp.dk/", "name": "Sinan Polat", "inLanguage": "da-DK", "publisher": {"@id": "https://sinanp.dk/#business"}}]}</script>
+<link rel="stylesheet" href="assets/base.css?v=2">
+<link rel="stylesheet" href="assets/dot.css?v=2">
+<link rel="stylesheet" href="assets/biz.css?v=2">
+<script>
+  /* Mørkt tema som standard. Har den besøgende valgt lyst, huskes det. */
+  (function(){try{var t=localStorage.getItem('tema-sinanp');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://sinanp.dk/#business", "name": "Sinan Polat", "url": "https://sinanp.dk/", "image": "https://sinanp.dk/assets/img/og.jpg", "logo": "https://sinanp.dk/assets/img/apple-touch-icon.png", "description": "Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder.", "email": "sinanp2020@hotmail.com", "telephone": "+4550584245", "areaServed": "DK", "address": {"@type": "PostalAddress", "addressLocality": "Kokkedal", "addressCountry": "DK"}, "sameAs": ["https://www.linkedin.com/in/sinan-polat-sp"], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Ydelser", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hjemmesider", "url": "https://sinanp.dk/ydelser/hjemmeside/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Webhosting", "url": "https://sinanp.dk/ydelser/webhosting/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Google Ads", "url": "https://sinanp.dk/ydelser/google-ads/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Motion graphics", "url": "https://sinanp.dk/ydelser/motion-graphics/"}}]}}, {"@type": "WebSite", "@id": "https://sinanp.dk/#website", "url": "https://sinanp.dk/", "name": "Sinan Polat", "inLanguage": "da-DK"}]}</script>
 </head>
 <body>
 <a class="skip" href="#indhold">Spring til indhold</a>
+<div class="progress" aria-hidden="true"></div>
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="./" aria-label="Sinan Polat – forside">Sinan Polat<i aria-hidden="true"></i></a>
-    <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="#ydelser">Ydelser</a><a href="cases/">Cases</a><a href="om/">Om mig</a><a href="kontakt/">Kontakt</a><a class="nav-cta" href="kontakt/">Få et tilbud</a></nav>
-    <a class="button small header-cta" href="kontakt/">Få et tilbud</a>
-    <button class="menu-btn" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  <a class="brand" href="./" aria-label="Sinan Polat – forside">Sinan Polat<span class="dot"></span></a>
+  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="#ydelser" data-sec="ydelser">Ydelser</a><a href="#cases" data-sec="cases">Cases</a><a href="#proces" data-sec="proces">Proces</a><a href="#om" data-sec="om">Om mig</a><a href="#kontakt" data-sec="kontakt">Kontakt</a></nav>
+  <div class="header-tools">
+    <a class="cv-link" href="kontakt/">Få et tilbud <span class="arr" aria-hidden="true">→</span></a>
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Skift mellem lyst og mørkt tema">
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </div>
 </header>
-<main id="indhold">
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Hjemmesider · Webhosting · Google Ads · Motion</p>
-      <h1>Jeg gør din virksomhed let at forstå og let at finde<span class="dot" aria-hidden="true"></span></h1>
-      <p class="lead">Jeg er Sinan, multimediedesigner med baggrund i UX. Jeg bygger hjemmesider, sørger for at de kører, skaffer kunder via Google Ads og laver motion graphics, der fanger blikket.</p>
-      <div class="actions"><a class="button" href="kontakt/">Få et tilbud <span aria-hidden="true">→</span></a><a class="button ghost" href="#cases">Se cases</a></div>
-      <ul class="trust"><li>Uforpligtende tilbud</li><li>Fast pris</li><li>Én kontaktperson</li></ul>
+<main id="top">
+  <section class="hero" id="indhold">
+    <canvas class="hero-field" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="status reveal"><span class="pulse"></span>Tager nye opgaver</p>
+        <h1 class="reveal">Jeg laver <span class="rotator" aria-live="polite"><span class="rotator-word" data-words='["hjemmesider", "Google Ads", "motion graphics", "webhosting"]'>hjemmesider</span></span>, der får kunderne til at tage kontakt.</h1>
+        <p class="lead reveal">Hej, jeg hedder Sinan 👋 Jeg er multimediedesigner med baggrund i <strong>UX</strong>. Jeg bygger din <strong>hjemmeside</strong>, sørger for at den <strong>kører</strong>, skaffer kunder via <strong>Google Ads</strong> og laver <strong>motion graphics</strong>, der fanger blikket.</p>
+        <p class="actions reveal">
+          <a class="button magnetic" href="kontakt/">Få et tilbud <span aria-hidden="true">→</span></a>
+          <a class="button ghost magnetic" href="#cases">Se cases</a>
+        </p>
+        <ul class="hero-trust reveal"><li>Uforpligtende tilbud</li><li>Fast pris</li><li>Én kontaktperson</li></ul>
+      </div>
+      <div class="hero-visual reveal" data-parallax>
+        <div class="portrait"><img src="assets/img/sinan-polat.jpg" alt="Portræt af Sinan Polat" width="800" height="800"></div>
+        <span class="chip c1" data-depth="18">Hjemmesider</span>
+        <span class="chip c2" data-depth="-14">Google Ads</span>
+        <span class="chip c3" data-depth="22">Webhosting</span>
+        <span class="chip c4" data-depth="-20">Motion graphics</span>
+        <svg class="scribble" viewBox="0 0 120 60" aria-hidden="true"><path d="M5 40c20-30 40-30 50-5s30 20 55-20"/><path d="M100 10l12 5-7 11"/></svg>
+      </div>
     </div>
-    <div class="hero-card">
-      <img src="assets/img/sinan-polat.jpg" alt="Portræt af Sinan Polat" width="800" height="800">
-      <div class="who"><div><b>Sinan Polat</b><small>Multimediedesigner · Kokkedal</small></div><span class="avail">Tager nye opgaver</span></div>
+    <a class="scroll-hint" href="#ydelser" aria-label="Scroll ned"><span></span></a>
+  </section>
+
+  <div class="marquee" aria-label="Det kan jeg hjælpe med">
+    <div class="marquee-track">
+      <span>Hjemmesider</span><span>Webhosting</span><span>Google Ads</span><span>Motion graphics</span><span>Logoanimation</span><span>UX og brugerrejser</span><span>SEO</span><span>Video til sociale medier</span><span>Domæne og DNS</span><span>Hjemmesider</span><span>Webhosting</span><span>Google Ads</span><span>Motion graphics</span><span>Logoanimation</span><span>UX og brugerrejser</span><span>SEO</span><span>Video til sociale medier</span><span>Domæne og DNS</span>
     </div>
   </div>
-</section>
 
-<section class="section" id="ydelser" aria-labelledby="ydelserTitle">
-  <div class="wrap">
-    <div class="section-head"><div><p class="eyebrow">Ydelser</p><h2 id="ydelserTitle">Det kan jeg hjælpe dig med</h2></div><p class="muted" style="max-width:42ch">Du kan vælge én ydelse eller samle det hele ét sted: fra hjemmeside og hosting til annoncer og video.</p></div>
-    <div class="services"><a class="service reveal" href="ydelser/hjemmeside/"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><h3>Hjemmesider</h3><p>En hurtig og mobilvenlig hjemmeside, der gør det let for kunderne at forstå, hvad du tilbyder, og tage kontakt.</p><span class="more">Læs mere</span></a><a class="service reveal" href="ydelser/webhosting/"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="1.8"/><rect x="4" y="14" width="16" height="6" rx="1.8"/><path d="M8 7h.01M8 17h.01M12 7h4M12 17h4"/></svg></span><h3>Webhosting</h3><p>Jeg sætter din hjemmeside op, kobler dit domæne og https på og holder siden kørende og opdateret.</p><span class="more">Læs mere</span></a><a class="service reveal" href="ydelser/google-ads/"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2M8.5 11h5M11 8.5v5"/></svg></span><h3>Google Ads</h3><p>Bliv fundet, når kunderne søger efter det, du tilbyder. Kampagner, søgeord og måling af, hvad annoncerne giver.</p><span class="more">Læs mere</span></a><a class="service reveal" href="ydelser/motion-graphics/"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10 9.2v5.6l4.6-2.8z"/></svg></span><h3>Motion graphics</h3><p>Logoanimationer, korte videoer og motion til sociale medier og hjemmesider, i de formater platformene kræver.</p><span class="more">Læs mere</span></a></div>
-  </div>
-</section>
+  <section id="ydelser" class="section skills-section">
+    <div class="section-head row">
+      <div><p class="eyebrow reveal">01 — Ydelser</p><h2 class="reveal">Det kan jeg hjælpe dig med</h2></div>
+      <p class="lead small reveal" style="max-width:42ch">Vælg én ydelse, eller saml det hele ét sted: fra hjemmeside og hosting til annoncer og video.</p>
+    </div>
+    <div class="services"><a class="skill reveal" href="ydelser/hjemmeside/"><span class="skill-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></svg></span><h3>Hjemmesider</h3><p>En hurtig og mobilvenlig hjemmeside, der gør det let for kunderne at forstå, hvad du tilbyder, og tage kontakt.</p><span class="more">Læs mere</span></a><a class="skill reveal" href="ydelser/webhosting/"><span class="skill-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="6" rx="1.8"/><rect x="4" y="14" width="16" height="6" rx="1.8"/><path d="M8 7h.01M8 17h.01M12 7h4M12 17h4"/></svg></span><h3>Webhosting</h3><p>Jeg sætter din hjemmeside op, kobler dit domæne og https på og holder siden kørende og opdateret.</p><span class="more">Læs mere</span></a><a class="skill reveal" href="ydelser/google-ads/"><span class="skill-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2M8.5 11h5M11 8.5v5"/></svg></span><h3>Google Ads</h3><p>Bliv fundet, når kunderne søger efter det, du tilbyder. Kampagner, søgeord og måling af, hvad annoncerne giver.</p><span class="more">Læs mere</span></a><a class="skill reveal" href="ydelser/motion-graphics/"><span class="skill-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10 9.2v5.6l4.6-2.8z"/></svg></span><h3>Motion graphics</h3><p>Logoanimationer, korte videoer og motion til sociale medier og hjemmesider, i de formater platformene kræver.</p><span class="more">Læs mere</span></a></div>
+  </section>
 
-<section class="section" id="cases" aria-labelledby="casesTitle">
-  <div class="wrap">
-    <div class="section-head"><div><p class="eyebrow">Cases</p><h2 id="casesTitle">Udvalgte projekter</h2></div><a class="button ghost small" href="cases/">Alle cases →</a></div>
-    <div class="cases"><article class="case big reveal">
-  <a class="case-media" href="https://portfolio.sinanp.dk/lyng-ventilation/" target="_blank" rel="noopener" aria-label="Åbn Lyng Ventilations hjemmeside i en ny fane">
-    <span class="mini-bar"><i></i><i></i><i></i><span>lyng-ventilation</span></span>
-    <img class="shot" src="assets/img/lyng-ventilation.jpg" alt="Forsiden af Lyng Ventilations hjemmeside med overskriften Frisk luft ind. Varmen bliver." loading="lazy" width="1400" height="875">
-  </a>
-  <div class="case-body">
-    <p class="kicker">Hjemmeside · Ventilationsfirma i Greve</p>
-    <h3>Lyng Ventilation: et teknisk produkt, forklaret enkelt</h3>
-    <p>Ny hjemmeside, hvor et animeret snit af huset viser, hvordan ventilationsanlægget virker. Et indeklima-tjek lader de besøgende krydse deres egne problemer af, og kontaktformularen er delt i to korte trin. Leveret med designsystem og brandmanual.</p>
-    <ul class="tags"><li>Hjemmeside</li><li>UX</li><li>Designsystem</li><li>AI-chatbot</li></ul>
-    <div class="actions"><a class="button small" href="https://portfolio.sinanp.dk/lyng-ventilation/" target="_blank" rel="noopener">Se hjemmesiden ↗</a></div>
-    <p class="note">Under udvikling: billeder og kundeudtalelser kommer, når firmaet leverer dem.</p>
-  </div>
-</article><article class="case reveal">
-  <div class="hika-media">
-    <figure class="phone" style="margin:0"><video data-autoplay muted loop playsinline preload="none" poster="assets/media/hikayahuset-poster.jpg" aria-label="Intro til Hikayahuset: dronen stiger op over huset i solnedgang, og titlen lægger sig bag horisonten"><source src="assets/media/hikayahuset-web.mp4" type="video/mp4"></video></figure>
-    <figure class="print" style="margin:0"><img src="assets/img/hikayahuset-plakat.jpg" alt="Plakat for Hikayahuset: titlen ligger bag horisonten over et luftfoto af huset" loading="lazy" width="900" height="1350"></figure>
-  </div>
-  <div class="case-body">
-    <p class="kicker">Motion graphic · Plakat</p>
-    <h3>Hikayahuset: en fortælling</h3>
-    <p>Intro til opholdsstedet Hikayahuset. Dronen stiger op over huset i solnedgang, og titlen glider ind og lægger sig bag horisonten, så typografien bliver en del af landskabet. Plakaten bruger samme greb.</p>
-    <ul class="tags"><li>Motion design</li><li>Typografi</li><li>9:16</li><li>Plakat</li></ul>
-  </div>
-</article><article class="case reveal">
-  <div class="case-media flush"><video data-autoplay muted loop playsinline preload="none" poster="assets/media/sinan-polat-logo-story-poster.jpg" aria-label="Logoanimation: prikken i Sinan Polat vågner, retter det skæve l op og bliver til logoet igen"><source src="assets/media/sinan-polat-logo-story.webm" type="video/webm"><source src="assets/media/sinan-polat-logo-story.mp4" type="video/mp4"></video></div>
-  <div class="case-body">
-    <p class="kicker">Logoanimation · 7 sek.</p>
-    <h3>Prikken retter l'et op</h3>
-    <p>Punktummet i mit logo vågner, opdager at l'et står skævt, skubber det på plads og bliver til et almindeligt punktum igen. Et eksempel på, hvordan et logo kan få personlighed.</p>
-  </div>
-</article></div>
-  </div>
-</section>
+  <section id="cases" class="section cases">
+    <div class="section-head">
+      <p class="eyebrow reveal">02 — Cases</p>
+      <h2 class="reveal">Projekter, man kan klikke på</h2>
+      <p class="lead small reveal">En hjemmeside til en kunde og motion graphics, der bevæger sig. Tryk på højttaleren for at høre videoerne.</p>
+    </div>
+    <div class="concept proto reveal">
+      <div class="concept-side">
+        <p class="kicker">Hjemmeside · Ventilationsfirma i Greve</p>
+        <h3 class="proto-title">Lyng Ventilation: et teknisk produkt, forklaret enkelt</h3>
+        <p class="proto-text">Ny hjemmeside, hvor et animeret snit af huset viser, hvordan ventilationsanlægget virker. Et indeklima-tjek lader de besøgende krydse deres egne problemer af, og kontaktformularen er delt i to korte trin.</p>
+        <dl class="facts">
+          <div><dt>Leveret</dt><dd>Koncept, UX, design og kode</dd></div>
+          <div><dt>Inkl.</dt><dd>Designsystem og brandmanual</dd></div>
+          <div><dt>Status</dt><dd>Under udvikling</dd></div>
+        </dl>
+        <p class="card-actions"><a class="button small" href="https://portfolio.sinanp.dk/lyng-ventilation/" target="_blank" rel="noopener">Se hjemmesiden ↗</a></p>
+        <p class="mock-note">Billeder og kundeudtalelser kommer, når firmaet leverer dem.</p>
+      </div>
+      <a class="browser proto-shot" href="https://portfolio.sinanp.dk/lyng-ventilation/" target="_blank" rel="noopener" aria-label="Åbn Lyng Ventilations hjemmeside i en ny fane">
+        <div class="browser-bar"><i></i><i></i><i></i><span>lyngventilation.dk</span></div>
+        <div class="proto-frame"><img src="assets/img/lyng-ventilation.jpg" alt="Forsiden af Lyng Ventilations hjemmeside med overskriften Frisk luft ind. Varmen bliver." loading="lazy" width="1400" height="875"><span class="proto-cta">Se hjemmesiden ↗</span></div>
+      </a>
+    </div>
+    <div class="motion compact-motion">
+      <article class="mcard mfeature reveal">
+        <div class="mmedia hika">
+          <figure class="phone"><video class="mvid" data-autoplay muted loop playsinline preload="none" poster="assets/media/hikayahuset-poster.jpg" aria-label="Intro til Hikayahuset: dronen stiger op over huset i solnedgang, og titlen lægger sig bag horisonten"><source src="assets/media/hikayahuset-web.mp4" type="video/mp4"></video><button class="msound" type="button" aria-pressed="false" aria-label="Slå lyd til"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="on" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/><path class="off" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button></figure>
+          <figure class="print"><img src="assets/img/hikayahuset-plakat.jpg" alt="Plakat for Hikayahuset: titlen ligger bag horisonten over et luftfoto af huset" loading="lazy" width="900" height="1350"></figure>
+        </div>
+        <div class="mbody"><p class="kicker">Motion graphic · Plakat</p><h3>Hikayahuset: en fortælling</h3><p>Intro til opholdsstedet Hikayahuset. Dronen stiger op over huset i solnedgang, og titlen lægger sig bag horisonten, så typografien bliver en del af landskabet. Plakaten bruger samme greb.</p><p class="role"><b>Leveret:</b> Motion design, typografi og plakat.</p></div>
+      </article>
+      <article class="mcard reveal">
+        <figure class="mmedia wide16"><video class="mvid" data-autoplay muted loop playsinline preload="none" poster="assets/media/sinan-polat-logo-story-poster.jpg" aria-label="Logoanimation: prikken i Sinan Polat vågner, retter det skæve l op og bliver til logoet igen"><source src="assets/media/sinan-polat-logo-story.webm" type="video/webm"><source src="assets/media/sinan-polat-logo-story.mp4" type="video/mp4"></video><button class="msound" type="button" aria-pressed="false" aria-label="Slå lyd til"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="on" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/><path class="off" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button></figure>
+        <div class="mbody"><p class="kicker">Logoanimation · 7 sek.</p><h3>Prikken retter l'et op</h3><p>Punktummet i mit logo vågner, skubber det skæve l på plads og bliver til et punktum igen. Sådan kan et logo få personlighed.</p></div>
+      </article>
+      <article class="mcard reveal">
+        <figure class="mmedia wide16"><video class="mvid" controls playsinline preload="none" poster="assets/media/sinan-polat-punktum-poster.jpg" aria-label="Animeret fortælling: prikken fra logoet rejser gennem designprocessen"><source src="assets/media/sinan-polat-punktum.webm" type="video/webm"><source src="assets/media/sinan-polat-punktum.mp4" type="video/mp4"></video></figure>
+        <div class="mbody"><p class="kicker">Animeret fortælling · 56 sek.</p><h3>Hvor andre sætter punktum</h3><p>Prikken fra mit logo rejser gennem designprocessen, fra interviews og post-its til en løsning, hvor svaret findes på under fem sekunder.</p></div>
+      </article>
+    </div>
+    <p class="see-all reveal"><a class="button ghost small" href="cases/">Alle cases →</a></p>
+  </section>
 
-<section class="section" aria-labelledby="procesTitle">
-  <div class="wrap">
-    <p class="eyebrow">Sådan arbejder jeg</p>
-    <h2 id="procesTitle">Fra første snak til færdig løsning</h2>
-    <ol class="steps">
-      <li class="reveal"><b>Kort samtale</b><p>Vi taler om din virksomhed, dine kunder og hvad løsningen skal kunne.</p></li>
-      <li class="reveal"><b>Tilbud og plan</b><p>Du får et skriftligt tilbud med fast pris og en realistisk tidsplan.</p></li>
-      <li class="reveal"><b>Design og udvikling</b><p>Du ser udkast undervejs og kan give feedback, før noget er færdigt.</p></li>
-      <li class="reveal"><b>Lancering og drift</b><p>Løsningen går i luften, og jeg hjælper gerne med hosting og opdateringer.</p></li>
+  <section id="proces" class="section">
+    <div class="section-head">
+      <p class="eyebrow reveal">03 — Sådan arbejder jeg</p>
+      <h2 class="reveal">Fra første snak til færdig løsning</h2>
+    </div>
+    <ol class="proto-steps">
+      <li class="reveal"><span class="ps-num">01</span><b>Kort samtale</b><p>Vi taler om din virksomhed, dine kunder og hvad løsningen skal kunne.</p></li>
+      <li class="reveal"><span class="ps-num">02</span><b>Tilbud og plan</b><p>Du får et skriftligt tilbud med fast pris og en realistisk tidsplan.</p></li>
+      <li class="reveal"><span class="ps-num">03</span><b>Design og udvikling</b><p>Du ser udkast undervejs og kan give feedback, før noget er færdigt.</p></li>
+      <li class="reveal ai"><span class="ps-num">04</span><b>Lancering og drift</b><p>Løsningen går i luften, og jeg hjælper gerne med hosting og opdateringer.</p></li>
     </ol>
-  </div>
-</section>
+  </section>
 
-<section class="section" aria-labelledby="omTitle">
-  <div class="wrap about">
-    <img class="reveal" src="assets/img/sinan-arbejde.jpg" alt="Sinan Polat ved sin arbejdsplads" loading="lazy" width="1600" height="1200">
-    <div>
-      <p class="eyebrow">Om mig</p>
-      <h2 id="omTitle">Design med <em>brugeren</em> først</h2>
-      <p>Jeg er uddannet multimediedesigner og afslutter i december 2026 min professionsbachelor i Digital Konceptudvikling. Jeg har en baggrund i <strong>UX og brugerresearch</strong> og har i flere år arbejdet med kommunikation, grafik og digitale løsninger.</p>
-      <p>Det betyder, at jeg ikke kun tænker på, hvordan noget ser ud, men også på, om dine kunder forstår det og handler på det.</p>
-      <a class="button ghost small" href="om/">Mere om mig →</a>
+  <section id="om" class="section about">
+    <div class="about-photo reveal">
+      <img src="assets/img/sinan-arbejde.jpg" alt="Sinan Polat ved sin arbejdsplads" loading="lazy" width="1600" height="1200">
+      <span class="photo-tag">Sinan Polat · Kokkedal</span>
     </div>
-  </div>
-</section>
+    <div class="about-text">
+      <p class="eyebrow reveal">04 — Om mig</p>
+      <h2 class="reveal">Design med brugeren <em>først</em>.</h2>
+      <p class="reveal">Jeg er uddannet multimediedesigner og afslutter i december 2026 min professionsbachelor i Digital Konceptudvikling. Jeg har en baggrund i <strong>UX og brugerresearch</strong> og har arbejdet med kommunikation, grafik og digitale løsninger i flere år.</p>
+      <p class="reveal">Derfor tænker jeg ikke kun på, hvordan noget ser ud, men også på, om dine kunder forstår det og handler på det.</p>
+      <ul class="principles reveal">
+        <li><span>01</span>Kunden før løsningen</li>
+        <li><span>02</span>Struktur før stil</li>
+        <li><span>03</span>Budskabet skal forstås på 5 sekunder</li>
+      </ul>
+      <p class="reveal" style="margin-top:22px"><a class="button ghost small" href="om/">Mere om mig →</a></p>
+    </div>
+  </section>
 </main>
-<section class="cta" aria-labelledby="ctaTitle">
-  <div class="wrap">
-    <h2 id="ctaTitle">Lad os tage en <em>snak</em>.</h2>
+<footer id="kontakt" class="contact">
+  <div class="contact-inner">
+    <p class="eyebrow">05 — Kontakt</p>
+    <h2 class="big">Lad os gøre din virksomhed <em>let</em> at vælge.</h2>
     <p>Fortæl kort, hvad du har brug for, så vender jeg tilbage med et uforpligtende tilbud. Typisk inden for en hverdag.</p>
-    <div class="actions">
-      <a class="button light" href="kontakt/">Få et uforpligtende tilbud</a>
-      <a class="button ghost-light" href="tel:+4550584245">Ring 50 58 42 45</a>
-      <a class="button ghost-light" href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a>
+    <div class="contact-actions">
+      <a class="button light magnetic" href="kontakt/">Få et uforpligtende tilbud →</a>
+      <button class="button ghost-light magnetic" type="button" id="copyMail"><span class="copy-label">sinanp2020@hotmail.com</span><span class="copy-ico" aria-hidden="true">⧉</span></button>
+      <a class="button ghost-light magnetic" href="tel:+4550584245">50 58 42 45</a>
+      <a class="button ghost-light magnetic" href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
-  </div>
-</section>
-<footer class="footer">
-  <div class="wrap footer-grid">
-    <div>
-      <a class="brand" href="./">Sinan Polat<i aria-hidden="true"></i></a>
-      <p style="margin-top:12px;max-width:34ch">Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder, der vil fremstå skarpt og blive fundet.</p>
+    <div class="foot-grid">
+      <div><span class="foot-brand">Sinan Polat<i></i></span><p style="margin-top:10px;max-width:36ch">Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder, der vil fremstå skarpt og blive fundet.</p></div>
+      <div><h3>Ydelser</h3><ul><li><a href="ydelser/hjemmeside/">Hjemmesider</a></li><li><a href="ydelser/webhosting/">Webhosting</a></li><li><a href="ydelser/google-ads/">Google Ads</a></li><li><a href="ydelser/motion-graphics/">Motion graphics</a></li></ul></div>
+      <div><h3>Sider</h3><ul><li><a href="cases/">Cases</a></li><li><a href="om/">Om mig</a></li><li><a href="kontakt/">Kontakt</a></li></ul></div>
     </div>
-    <div><h2>Ydelser</h2><ul><li><a href="ydelser/hjemmeside/">Hjemmesider</a></li><li><a href="ydelser/webhosting/">Webhosting</a></li><li><a href="ydelser/google-ads/">Google Ads</a></li><li><a href="ydelser/motion-graphics/">Motion graphics</a></li></ul></div>
-    <div><h2>Kontakt</h2><ul>
-      <li><a href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a></li>
-      <li><a href="tel:+4550584245">50 58 42 45</a></li>
-      <li><a href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-      <li><a href="kontakt/">Kontaktformular</a></li>
-    </ul></div>
-  </div>
-  <div class="wrap">
     <!-- Har du et CVR-nummer, så skriv det her, fx: · CVR 12345678 -->
-    <p class="fine">© <span data-year>2026</span> Sinan Polat · Kokkedal</p>
+    <p class="fine">© <span data-year>2026</span> Sinan Polat · Kokkedal · Siden er lavet i HTML, CSS og JavaScript sammen med Claude.</p>
   </div>
 </footer>
-<script src="assets/site.js?v=1" defer></script>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="assets/site.js?v=2" defer></script>
+<script src="assets/dot.js?v=2" defer></script>
 </body>
 </html>

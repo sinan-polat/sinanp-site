@@ -1,0 +1,108 @@
+/* =========================================================
+   sinanp.dk – tilføjelser oven på portfoliens stil (base.css)
+   ========================================================= */
+.cv-link{gap:8px}
+.cv-link .arr{transition:transform .3s var(--ease)}
+.cv-link:hover .arr{transform:translateX(3px)}
+
+/* hero */
+.hero h1 .rotator{min-width:0}
+.hero-trust{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;margin:26px 0 0;color:var(--muted);font-size:.95rem}
+.hero-trust li{display:flex;align-items:center;gap:8px}
+.hero-trust li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+
+/* ydelser: skill-kort som links */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+a.skill{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+a.skill .skill-ico svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+a.skill p{margin-bottom:16px}
+.skill .more{margin-top:auto;font-weight:600;font-size:.94rem;color:var(--accent);display:flex;align-items:center;gap:6px}
+.skill .more::after{content:"→";transition:transform .3s var(--ease)}
+.skill:hover .more::after{transform:translateX(4px)}
+
+/* cases */
+.cases .concept{margin-bottom:28px}
+.see-all{display:flex;justify-content:flex-end;margin-top:22px}
+
+/* undersider */
+.page-hero{padding:clamp(40px,7vw,96px) 0 clamp(28px,4vw,48px);max-width:var(--max);margin:0 auto;padding-left:24px;padding-right:24px;position:relative}
+.page-hero h1{font-size:clamp(2.4rem,5.6vw,4.4rem);max-width:16ch}
+.crumbs{font-size:.88rem;color:var(--muted);margin-bottom:22px}
+.crumbs a{text-decoration:none}
+.crumbs a:hover{color:var(--accent)}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,3vw,32px);box-shadow:var(--shadow)}
+.panel h2{font-size:1.6rem;margin-bottom:16px}
+.checklist{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.checklist li{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);transition:border-color .3s,transform .3s var(--ease)}
+.checklist li:hover{border-color:var(--accent);transform:translateX(4px)}
+.checklist li > span{font:500 .78rem var(--mono);color:var(--accent);padding-top:3px}
+.checklist b{display:block;font-weight:600}
+.checklist small{display:block;color:var(--muted);font-size:.92rem;line-height:1.5}
+.prose p{color:var(--muted);font-size:1.05rem}
+.faq{display:grid;gap:10px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 20px;transition:border-color .2s}
+.faq details[open]{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 1.4rem/1 var(--sans);color:var(--accent);transition:transform .3s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);margin:0 0 18px}
+.related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.related a{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-radius:14px;text-decoration:none;font-weight:600;transition:border-color .2s,transform .3s var(--ease)}
+.related a:hover{border-color:var(--accent);transform:translateY(-3px)}
+.related a::after{content:"→";color:var(--accent)}
+
+/* kontaktformular */
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form .full{grid-column:1/-1}
+.form label,.form legend{display:block;font-weight:600;font-size:.94rem;margin-bottom:6px}
+.form .opt{font-weight:400;color:var(--muted)}
+.form input,.form textarea{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;outline:0;transition:border-color .2s,box-shadow .2s}
+.form textarea{min-height:140px;resize:vertical}
+.form input:focus,.form textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+.form .err input,.form .err textarea{border-color:#E5484D}
+.form .err-msg{display:none;color:#E5484D;font-size:.85rem;margin-top:5px}
+.form .err .err-msg{display:block}
+.chips-pick{display:flex;flex-wrap:wrap;gap:8px}
+.chips-pick label{margin:0;font-weight:500;cursor:pointer}
+.chips-pick input{position:absolute;opacity:0;width:1px;height:1px}
+.chips-pick span{display:inline-block;padding:9px 15px;border:1.5px solid var(--line);border-radius:999px;background:var(--surface);transition:all .15s}
+.chips-pick input:checked + span{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chips-pick input:focus-visible + span{outline:3px solid var(--accent);outline-offset:2px}
+.form-note{font-size:.85rem;color:var(--muted);margin:0}
+.form-ok{display:none;padding:18px 20px;border-radius:14px;background:color-mix(in srgb,#2DBE6C 16%,var(--surface));font-weight:600}
+.form-ok.show{display:block}
+.contact-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:8px 24px}
+.contact-card a{display:flex;flex-direction:column;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.contact-card a:last-child{border:0}
+.contact-card small{font:500 .72rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.contact-card b{font-size:1.05rem}
+.contact-card a:hover b{color:var(--accent)}
+
+/* footer-links i den mørke kontaktsektion */
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;padding:36px 0 8px;border-top:1px solid rgba(255,255,255,.12)}
+.foot-grid h3{font:500 .74rem var(--mono);text-transform:uppercase;letter-spacing:.1em;color:#8A8F99;margin:0 0 12px}
+.foot-grid ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.foot-grid a{text-decoration:none;color:#E4E1DB}
+.foot-grid a:hover{color:#FF7A50}
+.foot-brand{font:600 1.5rem var(--serif);color:#F5F2EC}
+.foot-brand i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#FF7A50;margin-left:3px}
+
+/* 404 */
+.nf-simple{min-height:60vh;display:grid;place-content:center;text-align:center;padding:40px 24px}
+.nf-simple .actions{justify-content:center}
+
+@media (max-width:1040px){.services{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.split{grid-template-columns:1fr}.related{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr 1fr}.foot-grid > :first-child{grid-column:1/-1}}
+@media (max-width:640px){
+  .services{grid-template-columns:1fr;gap:12px}
+  a.skill{display:grid;grid-template-columns:44px 1fr;column-gap:14px;padding:18px}
+  a.skill .skill-ico{grid-row:1/4;width:44px;height:44px;margin:0}
+  a.skill h3{margin-bottom:4px}
+  a.skill p{margin-bottom:8px;font-size:.92rem}
+  .form{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .page-hero{padding-left:20px;padding-right:20px}
+}
+@media (max-width:640px){.contact-actions .button.light{grid-column:1/-1}}

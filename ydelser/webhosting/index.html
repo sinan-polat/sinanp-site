@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="da">
+<html lang="da" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,90 +14,97 @@
 <meta property="og:url" content="https://sinanp.dk/ydelser/webhosting/">
 <meta property="og:image" content="https://sinanp.dk/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F5F2EC">
+<meta name="theme-color" content="#101114">
 <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="../../assets/style.css?v=1">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Webhosting", "description": "Jeg sætter din hjemmeside op på hosting, kobler dit domæne og https på og holder siden kørende og opdateret, så du kan bruge tiden på din forretning.", "url": "https://sinanp.dk/ydelser/webhosting/", "areaServed": "DK", "provider": {"@type": "ProfessionalService", "name": "Sinan Polat", "url": "https://sinanp.dk/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Forside", "item": "https://sinanp.dk/"}, {"@type": "ListItem", "position": 2, "name": "Ydelser", "item": "https://sinanp.dk/#ydelser"}, {"@type": "ListItem", "position": 3, "name": "Webhosting", "item": "https://sinanp.dk/ydelser/webhosting/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kan du flytte min nuværende hjemmeside?", "acceptedAnswer": {"@type": "Answer", "text": "Ofte, ja. Det afhænger af, hvordan siden er bygget. Send mig adressen, så vurderer jeg, hvad der er den bedste løsning."}}, {"@type": "Question", "name": "Hvad med min e-mail på domænet?", "acceptedAnswer": {"@type": "Answer", "text": "Den bliver ved med at virke. Jeg sætter DNS op, så hjemmeside og mail hver især peger det rigtige sted hen."}}, {"@type": "Question", "name": "Er der binding?", "acceptedAnswer": {"@type": "Answer", "text": "Det aftaler vi i tilbuddet. Målet er en enkel aftale, du kan forstå."}}]}]}</script>
+<link rel="stylesheet" href="../../assets/base.css?v=2">
+<link rel="stylesheet" href="../../assets/dot.css?v=2">
+<link rel="stylesheet" href="../../assets/biz.css?v=2">
+<script>
+  /* Mørkt tema som standard. Har den besøgende valgt lyst, huskes det. */
+  (function(){try{var t=localStorage.getItem('tema-sinanp');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Webhosting", "description": "Jeg sætter din hjemmeside op på hosting, kobler dit domæne og https på og holder siden kørende og opdateret, så du kan bruge tiden på din forretning.", "url": "https://sinanp.dk/ydelser/webhosting/", "areaServed": "DK", "provider": {"@type": "ProfessionalService", "name": "Sinan Polat", "url": "https://sinanp.dk/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Forside", "item": "https://sinanp.dk/"}, {"@type": "ListItem", "position": 2, "name": "Webhosting", "item": "https://sinanp.dk/ydelser/webhosting/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kan du flytte min nuværende hjemmeside?", "acceptedAnswer": {"@type": "Answer", "text": "Ofte, ja. Det afhænger af, hvordan siden er bygget. Send mig adressen, så vurderer jeg, hvad der er den bedste løsning."}}, {"@type": "Question", "name": "Hvad med min e-mail på domænet?", "acceptedAnswer": {"@type": "Answer", "text": "Den bliver ved med at virke. Jeg sætter DNS op, så hjemmeside og mail hver især peger det rigtige sted hen."}}, {"@type": "Question", "name": "Er der binding?", "acceptedAnswer": {"@type": "Answer", "text": "Det aftaler vi i tilbuddet. Målet er en enkel aftale, du kan forstå."}}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#indhold">Spring til indhold</a>
+<div class="progress" aria-hidden="true"></div>
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="../../" aria-label="Sinan Polat – forside">Sinan Polat<i aria-hidden="true"></i></a>
-    <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../../#ydelser" aria-current="page">Ydelser</a><a href="../../cases/">Cases</a><a href="../../om/">Om mig</a><a href="../../kontakt/">Kontakt</a><a class="nav-cta" href="../../kontakt/">Få et tilbud</a></nav>
-    <a class="button small header-cta" href="../../kontakt/">Få et tilbud</a>
-    <button class="menu-btn" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  <a class="brand" href="../../" aria-label="Sinan Polat – forside">Sinan Polat<span class="dot"></span></a>
+  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../../#ydelser" data-page aria-current="page">Ydelser</a><a href="../../cases/">Cases</a><a href="../../#proces">Proces</a><a href="../../om/">Om mig</a><a href="../../kontakt/">Kontakt</a></nav>
+  <div class="header-tools">
+    <a class="cv-link" href="../../kontakt/">Få et tilbud <span class="arr" aria-hidden="true">→</span></a>
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Skift mellem lyst og mørkt tema">
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </div>
 </header>
 <main id="indhold">
-<section class="page-hero">
-  <div class="wrap">
+  <section class="page-hero">
     <nav class="crumbs" aria-label="Brødkrumme"><a href="../../">Forside</a> › <a href="../../#ydelser">Ydelser</a> › <span aria-current="page">Webhosting</span></nav>
     <div class="split">
       <div>
-        <p class="eyebrow">Webhosting</p>
-        <h1 style="font-size:clamp(2.3rem,5.4vw,4.2rem)">Webhosting, så du ikke skal <em>tænke</em> på det</h1>
-        <p class="lead" style="margin-top:1em">En hjemmeside skal ligge et sted, være sikker og blive holdt ved lige. Jeg tager mig af det tekniske, så du har én at ringe til, hvis der er noget.</p>
-        <div class="actions"><a class="button" href="../../kontakt/?ydelse=Webhosting">Få et tilbud på webhosting →</a><a class="button ghost" href="tel:+4550584245">Ring 50 58 42 45</a></div>
+        <p class="eyebrow reveal">Ydelse · Webhosting</p>
+        <h1 class="reveal">Webhosting, så du ikke skal <em>tænke</em> på det</h1>
+        <p class="lead reveal">En hjemmeside skal ligge et sted, være sikker og blive holdt ved lige. Jeg tager mig af det tekniske, så du har én at ringe til, hvis der er noget.</p>
+        <p class="actions reveal"><a class="button magnetic" href="../../kontakt/?ydelse=Webhosting">Få et tilbud →</a><a class="button ghost magnetic" href="tel:+4550584245">Ring 50 58 42 45</a></p>
       </div>
-      <div class="panel reveal"><h2>Det får du</h2><ul class="checks"><li><b>Opsætning af hosting</b><span>Din hjemmeside lægges på en stabil og hurtig hostingløsning, der passer til siden.</span></li><li><b>Domæne og DNS</b><span>Jeg kobler dit domæne til siden og sætter DNS korrekt op, også hvis du allerede har en mail på domænet.</span></li><li><b>Https og sikkerhed</b><span>Siden kører med et gyldigt certifikat, så browseren viser den som sikker.</span></li><li><b>Små rettelser og opdateringer</b><span>Nye tekster, billeder eller åbningstider. Send en mail, så retter jeg det.</span></li><li><b>Overvågning</b><span>Jeg holder øje med, at siden er oppe, og reagerer, hvis noget ikke virker.</span></li><li><b>Ét sted at henvende sig</b><span>Du skal ikke selv finde rundt i kontrolpaneler og DNS-indstillinger.</span></li></ul></div>
+      <div class="panel reveal"><h2>Det får du</h2><ul class="checklist"><li><span>01</span><div><b>Opsætning af hosting</b><small>Din hjemmeside lægges på en stabil og hurtig hostingløsning, der passer til siden.</small></div></li><li><span>02</span><div><b>Domæne og DNS</b><small>Jeg kobler dit domæne til siden og sætter DNS korrekt op, også hvis du allerede har en mail på domænet.</small></div></li><li><span>03</span><div><b>Https og sikkerhed</b><small>Siden kører med et gyldigt certifikat, så browseren viser den som sikker.</small></div></li><li><span>04</span><div><b>Små rettelser og opdateringer</b><small>Nye tekster, billeder eller åbningstider. Send en mail, så retter jeg det.</small></div></li><li><span>05</span><div><b>Overvågning</b><small>Jeg holder øje med, at siden er oppe, og reagerer, hvis noget ikke virker.</small></div></li><li><span>06</span><div><b>Ét sted at henvende sig</b><small>Du skal ikke selv finde rundt i kontrolpaneler og DNS-indstillinger.</small></div></li></ul></div>
     </div>
-  </div>
-</section>
-<section class="section" style="padding-top:20px"><div class="wrap split">
-  <div class="prose"><p>Webhosting handler ikke kun om, hvor siden ligger. Det handler om, at siden er oppe, at domænet peger det rigtige sted hen, og at der er nogen, der retter, når noget skal ændres.</p><p>Jeg tilbyder hosting og drift til de hjemmesider, jeg bygger, og kan også overtage en eksisterende side. Vi aftaler en fast månedlig pris, så du ved, hvad det koster.</p></div>
-  <div><h2 style="font-size:1.6rem">Ofte stillede spørgsmål</h2><div class="faq"><details><summary>Kan du flytte min nuværende hjemmeside?</summary><p>Ofte, ja. Det afhænger af, hvordan siden er bygget. Send mig adressen, så vurderer jeg, hvad der er den bedste løsning.</p></details><details><summary>Hvad med min e-mail på domænet?</summary><p>Den bliver ved med at virke. Jeg sætter DNS op, så hjemmeside og mail hver især peger det rigtige sted hen.</p></details><details><summary>Er der binding?</summary><p>Det aftaler vi i tilbuddet. Målet er en enkel aftale, du kan forstå.</p></details></div></div>
-</div></section>
-<section class="section" aria-labelledby="caseTitle"><div class="wrap"><p class="eyebrow">Eksempel</p><h2 id="caseTitle">Et projekt, jeg har lavet</h2><div class="cases" style="grid-template-columns:1fr"><article class="case reveal">
-  <a class="case-media" href="https://portfolio.sinanp.dk/lyng-ventilation/" target="_blank" rel="noopener" aria-label="Åbn Lyng Ventilations hjemmeside i en ny fane">
-    <span class="mini-bar"><i></i><i></i><i></i><span>lyng-ventilation</span></span>
-    <img class="shot" src="../../assets/img/lyng-ventilation.jpg" alt="Forsiden af Lyng Ventilations hjemmeside med overskriften Frisk luft ind. Varmen bliver." loading="lazy" width="1400" height="875">
-  </a>
-  <div class="case-body">
-    <p class="kicker">Hjemmeside · Ventilationsfirma i Greve</p>
-    <h3>Lyng Ventilation: et teknisk produkt, forklaret enkelt</h3>
-    <p>Ny hjemmeside, hvor et animeret snit af huset viser, hvordan ventilationsanlægget virker. Et indeklima-tjek lader de besøgende krydse deres egne problemer af, og kontaktformularen er delt i to korte trin. Leveret med designsystem og brandmanual.</p>
-    <ul class="tags"><li>Hjemmeside</li><li>UX</li><li>Designsystem</li><li>AI-chatbot</li></ul>
-    <div class="actions"><a class="button small" href="https://portfolio.sinanp.dk/lyng-ventilation/" target="_blank" rel="noopener">Se hjemmesiden ↗</a></div>
-    <p class="note">Under udvikling: billeder og kundeudtalelser kommer, når firmaet leverer dem.</p>
-  </div>
-</article></div></div></section>
-<section class="section"><div class="wrap"><p class="eyebrow">Andre ydelser</p><div class="related"><a href="../../ydelser/hjemmeside/">Hjemmesider</a><a href="../../ydelser/google-ads/">Google Ads</a><a href="../../ydelser/motion-graphics/">Motion graphics</a></div></div></section>
+  </section>
+  <section class="section" style="padding-top:clamp(40px,5vw,64px)">
+    <div class="split">
+      <div class="prose reveal"><p class="eyebrow">Sådan griber jeg det an</p><p>Webhosting handler ikke kun om, hvor siden ligger. Det handler om, at siden er oppe, at domænet peger det rigtige sted hen, og at der er nogen, der retter, når noget skal ændres.</p><p>Jeg tilbyder hosting og drift til de hjemmesider, jeg bygger, og kan også overtage en eksisterende side. Vi aftaler en fast månedlig pris, så du ved, hvad det koster.</p></div>
+      <div class="reveal"><p class="eyebrow">Spørgsmål</p><div class="faq"><details><summary>Kan du flytte min nuværende hjemmeside?</summary><p>Ofte, ja. Det afhænger af, hvordan siden er bygget. Send mig adressen, så vurderer jeg, hvad der er den bedste løsning.</p></details><details><summary>Hvad med min e-mail på domænet?</summary><p>Den bliver ved med at virke. Jeg sætter DNS op, så hjemmeside og mail hver især peger det rigtige sted hen.</p></details><details><summary>Er der binding?</summary><p>Det aftaler vi i tilbuddet. Målet er en enkel aftale, du kan forstå.</p></details></div></div>
+    </div>
+  </section>
+  <section class="section cases"><div class="section-head"><p class="eyebrow reveal">Eksempel</p><h2 class="reveal">Et projekt, jeg har lavet</h2></div><div class="concept proto reveal">
+      <div class="concept-side">
+        <p class="kicker">Hjemmeside · Ventilationsfirma i Greve</p>
+        <h3 class="proto-title">Lyng Ventilation: et teknisk produkt, forklaret enkelt</h3>
+        <p class="proto-text">Ny hjemmeside, hvor et animeret snit af huset viser, hvordan ventilationsanlægget virker. Et indeklima-tjek lader de besøgende krydse deres egne problemer af, og kontaktformularen er delt i to korte trin.</p>
+        <dl class="facts">
+          <div><dt>Leveret</dt><dd>Koncept, UX, design og kode</dd></div>
+          <div><dt>Inkl.</dt><dd>Designsystem og brandmanual</dd></div>
+          <div><dt>Status</dt><dd>Under udvikling</dd></div>
+        </dl>
+        <p class="card-actions"><a class="button small" href="https://portfolio.sinanp.dk/lyng-ventilation/" target="_blank" rel="noopener">Se hjemmesiden ↗</a></p>
+        <p class="mock-note">Billeder og kundeudtalelser kommer, når firmaet leverer dem.</p>
+      </div>
+      <a class="browser proto-shot" href="https://portfolio.sinanp.dk/lyng-ventilation/" target="_blank" rel="noopener" aria-label="Åbn Lyng Ventilations hjemmeside i en ny fane">
+        <div class="browser-bar"><i></i><i></i><i></i><span>lyngventilation.dk</span></div>
+        <div class="proto-frame"><img src="../../assets/img/lyng-ventilation.jpg" alt="Forsiden af Lyng Ventilations hjemmeside med overskriften Frisk luft ind. Varmen bliver." loading="lazy" width="1400" height="875"><span class="proto-cta">Se hjemmesiden ↗</span></div>
+      </a>
+    </div></section>
+  <section class="section"><p class="eyebrow reveal">Andre ydelser</p><div class="related reveal"><a href="../../ydelser/hjemmeside/">Hjemmesider</a><a href="../../ydelser/google-ads/">Google Ads</a><a href="../../ydelser/motion-graphics/">Motion graphics</a></div></section>
 </main>
-<section class="cta" aria-labelledby="ctaTitle">
-  <div class="wrap">
-    <h2 id="ctaTitle">Lad os tage en <em>snak</em>.</h2>
+<footer id="kontakt" class="contact">
+  <div class="contact-inner">
+    <p class="eyebrow">Klar? — Kontakt</p>
+    <h2 class="big">Skal vi tage en <em>snak</em> om webhosting?</h2>
     <p>Fortæl kort, hvad du har brug for, så vender jeg tilbage med et uforpligtende tilbud. Typisk inden for en hverdag.</p>
-    <div class="actions">
-      <a class="button light" href="../../kontakt/">Få et uforpligtende tilbud</a>
-      <a class="button ghost-light" href="tel:+4550584245">Ring 50 58 42 45</a>
-      <a class="button ghost-light" href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a>
+    <div class="contact-actions">
+      <a class="button light magnetic" href="../../kontakt/">Få et uforpligtende tilbud →</a>
+      <button class="button ghost-light magnetic" type="button" id="copyMail"><span class="copy-label">sinanp2020@hotmail.com</span><span class="copy-ico" aria-hidden="true">⧉</span></button>
+      <a class="button ghost-light magnetic" href="tel:+4550584245">50 58 42 45</a>
+      <a class="button ghost-light magnetic" href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
-  </div>
-</section>
-<footer class="footer">
-  <div class="wrap footer-grid">
-    <div>
-      <a class="brand" href="../../">Sinan Polat<i aria-hidden="true"></i></a>
-      <p style="margin-top:12px;max-width:34ch">Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder, der vil fremstå skarpt og blive fundet.</p>
+    <div class="foot-grid">
+      <div><span class="foot-brand">Sinan Polat<i></i></span><p style="margin-top:10px;max-width:36ch">Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder, der vil fremstå skarpt og blive fundet.</p></div>
+      <div><h3>Ydelser</h3><ul><li><a href="../../ydelser/hjemmeside/">Hjemmesider</a></li><li><a href="../../ydelser/webhosting/">Webhosting</a></li><li><a href="../../ydelser/google-ads/">Google Ads</a></li><li><a href="../../ydelser/motion-graphics/">Motion graphics</a></li></ul></div>
+      <div><h3>Sider</h3><ul><li><a href="../../cases/">Cases</a></li><li><a href="../../om/">Om mig</a></li><li><a href="../../kontakt/">Kontakt</a></li></ul></div>
     </div>
-    <div><h2>Ydelser</h2><ul><li><a href="../../ydelser/hjemmeside/">Hjemmesider</a></li><li><a href="../../ydelser/webhosting/">Webhosting</a></li><li><a href="../../ydelser/google-ads/">Google Ads</a></li><li><a href="../../ydelser/motion-graphics/">Motion graphics</a></li></ul></div>
-    <div><h2>Kontakt</h2><ul>
-      <li><a href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a></li>
-      <li><a href="tel:+4550584245">50 58 42 45</a></li>
-      <li><a href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-      <li><a href="../../kontakt/">Kontaktformular</a></li>
-    </ul></div>
-  </div>
-  <div class="wrap">
     <!-- Har du et CVR-nummer, så skriv det her, fx: · CVR 12345678 -->
-    <p class="fine">© <span data-year>2026</span> Sinan Polat · Kokkedal</p>
+    <p class="fine">© <span data-year>2026</span> Sinan Polat · Kokkedal · Siden er lavet i HTML, CSS og JavaScript sammen med Claude.</p>
   </div>
 </footer>
-<script src="../../assets/site.js?v=1" defer></script>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="../../assets/site.js?v=2" defer></script>
+<script src="../../assets/dot.js?v=2" defer></script>
 </body>
 </html>

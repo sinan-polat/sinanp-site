@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="da">
+<html lang="da" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,88 +14,96 @@
 <meta property="og:url" content="https://sinanp.dk/ydelser/motion-graphics/">
 <meta property="og:image" content="https://sinanp.dk/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F5F2EC">
+<meta name="theme-color" content="#101114">
 <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="../../assets/style.css?v=1">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Motion graphics", "description": "Korte animationer, logoanimationer og video i formater til sociale medier og hjemmesider. Motion design, typografi og klipning, der fanger opmærksomheden.", "url": "https://sinanp.dk/ydelser/motion-graphics/", "areaServed": "DK", "provider": {"@type": "ProfessionalService", "name": "Sinan Polat", "url": "https://sinanp.dk/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Forside", "item": "https://sinanp.dk/"}, {"@type": "ListItem", "position": 2, "name": "Ydelser", "item": "https://sinanp.dk/#ydelser"}, {"@type": "ListItem", "position": 3, "name": "Motion graphics", "item": "https://sinanp.dk/ydelser/motion-graphics/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Hvilke formater leverer du?", "acceptedAnswer": {"@type": "Answer", "text": "Typisk MP4 i de størrelser, du skal bruge, fx 16:9, 9:16 og 1:1. Til hjemmesider kan jeg også levere lette WebM-filer."}}, {"@type": "Question", "name": "Kan du bruge mine egne optagelser?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Jeg kan klippe og animere ovenpå dine optagelser, eller tage billeder og video, hvis du mangler materiale."}}, {"@type": "Question", "name": "Hvor lang skal en video være?", "acceptedAnswer": {"@type": "Answer", "text": "Til sociale medier er 6–30 sekunder ofte nok. Vi aftaler længden ud fra, hvor videoen skal bruges."}}]}]}</script>
+<link rel="stylesheet" href="../../assets/base.css?v=2">
+<link rel="stylesheet" href="../../assets/dot.css?v=2">
+<link rel="stylesheet" href="../../assets/biz.css?v=2">
+<script>
+  /* Mørkt tema som standard. Har den besøgende valgt lyst, huskes det. */
+  (function(){try{var t=localStorage.getItem('tema-sinanp');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Motion graphics", "description": "Korte animationer, logoanimationer og video i formater til sociale medier og hjemmesider. Motion design, typografi og klipning, der fanger opmærksomheden.", "url": "https://sinanp.dk/ydelser/motion-graphics/", "areaServed": "DK", "provider": {"@type": "ProfessionalService", "name": "Sinan Polat", "url": "https://sinanp.dk/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Forside", "item": "https://sinanp.dk/"}, {"@type": "ListItem", "position": 2, "name": "Motion graphics", "item": "https://sinanp.dk/ydelser/motion-graphics/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Hvilke formater leverer du?", "acceptedAnswer": {"@type": "Answer", "text": "Typisk MP4 i de størrelser, du skal bruge, fx 16:9, 9:16 og 1:1. Til hjemmesider kan jeg også levere lette WebM-filer."}}, {"@type": "Question", "name": "Kan du bruge mine egne optagelser?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Jeg kan klippe og animere ovenpå dine optagelser, eller tage billeder og video, hvis du mangler materiale."}}, {"@type": "Question", "name": "Hvor lang skal en video være?", "acceptedAnswer": {"@type": "Answer", "text": "Til sociale medier er 6–30 sekunder ofte nok. Vi aftaler længden ud fra, hvor videoen skal bruges."}}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#indhold">Spring til indhold</a>
+<div class="progress" aria-hidden="true"></div>
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="../../" aria-label="Sinan Polat – forside">Sinan Polat<i aria-hidden="true"></i></a>
-    <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../../#ydelser" aria-current="page">Ydelser</a><a href="../../cases/">Cases</a><a href="../../om/">Om mig</a><a href="../../kontakt/">Kontakt</a><a class="nav-cta" href="../../kontakt/">Få et tilbud</a></nav>
-    <a class="button small header-cta" href="../../kontakt/">Få et tilbud</a>
-    <button class="menu-btn" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  <a class="brand" href="../../" aria-label="Sinan Polat – forside">Sinan Polat<span class="dot"></span></a>
+  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../../#ydelser" data-page aria-current="page">Ydelser</a><a href="../../cases/">Cases</a><a href="../../#proces">Proces</a><a href="../../om/">Om mig</a><a href="../../kontakt/">Kontakt</a></nav>
+  <div class="header-tools">
+    <a class="cv-link" href="../../kontakt/">Få et tilbud <span class="arr" aria-hidden="true">→</span></a>
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Skift mellem lyst og mørkt tema">
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </div>
 </header>
 <main id="indhold">
-<section class="page-hero">
-  <div class="wrap">
+  <section class="page-hero">
     <nav class="crumbs" aria-label="Brødkrumme"><a href="../../">Forside</a> › <a href="../../#ydelser">Ydelser</a> › <span aria-current="page">Motion graphics</span></nav>
     <div class="split">
       <div>
-        <p class="eyebrow">Motion graphics</p>
-        <h1 style="font-size:clamp(2.3rem,5.4vw,4.2rem)">Motion graphics, der fanger <em>blikket</em></h1>
-        <p class="lead" style="margin-top:1em">Bevægelse fanger opmærksomheden, før teksten bliver læst. Jeg laver korte animationer og videoer, der gør dit budskab tydeligt på få sekunder.</p>
-        <div class="actions"><a class="button" href="../../kontakt/?ydelse=Motion graphics">Få et tilbud på motion graphics →</a><a class="button ghost" href="tel:+4550584245">Ring 50 58 42 45</a></div>
+        <p class="eyebrow reveal">Ydelse · Motion graphics</p>
+        <h1 class="reveal">Motion graphics, der fanger <em>blikket</em></h1>
+        <p class="lead reveal">Bevægelse fanger opmærksomheden, før teksten bliver læst. Jeg laver korte animationer og videoer, der gør dit budskab tydeligt på få sekunder.</p>
+        <p class="actions reveal"><a class="button magnetic" href="../../kontakt/?ydelse=Motion graphics">Få et tilbud →</a><a class="button ghost magnetic" href="tel:+4550584245">Ring 50 58 42 45</a></p>
       </div>
-      <div class="panel reveal"><h2>Det får du</h2><ul class="checks"><li><b>Logoanimationer</b><span>Dit logo i bevægelse til intro, outro, præsentationer og sociale medier.</span></li><li><b>Korte videoer til sociale medier</b><span>I de rigtige formater, fx 9:16 til Reels og TikTok og 1:1 eller 4:5 til feeds.</span></li><li><b>Typografi og grafik i bevægelse</b><span>Tekst og grafik, der forklarer et budskab, også når videoen ses uden lyd.</span></li><li><b>Klipning og lyd</b><span>Klipning, farver og lyd i Premiere Pro og Audition.</span></li><li><b>Plakat og stillbilleder</b><span>Samme visuelle greb kan bruges på plakater og opslag, så kampagnen hænger sammen.</span></li></ul></div>
+      <div class="panel reveal"><h2>Det får du</h2><ul class="checklist"><li><span>01</span><div><b>Logoanimationer</b><small>Dit logo i bevægelse til intro, outro, præsentationer og sociale medier.</small></div></li><li><span>02</span><div><b>Korte videoer til sociale medier</b><small>I de rigtige formater, fx 9:16 til Reels og TikTok og 1:1 eller 4:5 til feeds.</small></div></li><li><span>03</span><div><b>Typografi og grafik i bevægelse</b><small>Tekst og grafik, der forklarer et budskab, også når videoen ses uden lyd.</small></div></li><li><span>04</span><div><b>Klipning og lyd</b><small>Klipning, farver og lyd i Premiere Pro og Audition.</small></div></li><li><span>05</span><div><b>Plakat og stillbilleder</b><small>Samme visuelle greb kan bruges på plakater og opslag, så kampagnen hænger sammen.</small></div></li></ul></div>
     </div>
-  </div>
-</section>
-<section class="section" style="padding-top:20px"><div class="wrap split">
-  <div class="prose"><p>De fleste videoer på sociale medier ses uden lyd og bliver scrollet forbi på et par sekunder. Derfor arbejder jeg med typografi og bevægelse, der fortæller historien, før seeren når at scrolle videre.</p><p>Jeg leverer i de formater, du skal bruge, så den samme idé virker på både hjemmeside, Instagram og LinkedIn.</p></div>
-  <div><h2 style="font-size:1.6rem">Ofte stillede spørgsmål</h2><div class="faq"><details><summary>Hvilke formater leverer du?</summary><p>Typisk MP4 i de størrelser, du skal bruge, fx 16:9, 9:16 og 1:1. Til hjemmesider kan jeg også levere lette WebM-filer.</p></details><details><summary>Kan du bruge mine egne optagelser?</summary><p>Ja. Jeg kan klippe og animere ovenpå dine optagelser, eller tage billeder og video, hvis du mangler materiale.</p></details><details><summary>Hvor lang skal en video være?</summary><p>Til sociale medier er 6–30 sekunder ofte nok. Vi aftaler længden ud fra, hvor videoen skal bruges.</p></details></div></div>
-</div></section>
-<section class="section" aria-labelledby="caseTitle"><div class="wrap"><p class="eyebrow">Eksempel</p><h2 id="caseTitle">Et projekt, jeg har lavet</h2><div class="cases" style="grid-template-columns:1fr"><article class="case reveal">
-  <div class="hika-media">
-    <figure class="phone" style="margin:0"><video data-autoplay muted loop playsinline preload="none" poster="../../assets/media/hikayahuset-poster.jpg" aria-label="Intro til Hikayahuset: dronen stiger op over huset i solnedgang, og titlen lægger sig bag horisonten"><source src="../../assets/media/hikayahuset-web.mp4" type="video/mp4"></video></figure>
-    <figure class="print" style="margin:0"><img src="../../assets/img/hikayahuset-plakat.jpg" alt="Plakat for Hikayahuset: titlen ligger bag horisonten over et luftfoto af huset" loading="lazy" width="900" height="1350"></figure>
-  </div>
-  <div class="case-body">
-    <p class="kicker">Motion graphic · Plakat</p>
-    <h3>Hikayahuset: en fortælling</h3>
-    <p>Intro til opholdsstedet Hikayahuset. Dronen stiger op over huset i solnedgang, og titlen glider ind og lægger sig bag horisonten, så typografien bliver en del af landskabet. Plakaten bruger samme greb.</p>
-    <ul class="tags"><li>Motion design</li><li>Typografi</li><li>9:16</li><li>Plakat</li></ul>
-  </div>
-</article></div></div></section>
-<section class="section"><div class="wrap"><p class="eyebrow">Andre ydelser</p><div class="related"><a href="../../ydelser/hjemmeside/">Hjemmesider</a><a href="../../ydelser/webhosting/">Webhosting</a><a href="../../ydelser/google-ads/">Google Ads</a></div></div></section>
+  </section>
+  <section class="section" style="padding-top:clamp(40px,5vw,64px)">
+    <div class="split">
+      <div class="prose reveal"><p class="eyebrow">Sådan griber jeg det an</p><p>De fleste videoer på sociale medier ses uden lyd og bliver scrollet forbi på et par sekunder. Derfor arbejder jeg med typografi og bevægelse, der fortæller historien, før seeren når at scrolle videre.</p><p>Jeg leverer i de formater, du skal bruge, så den samme idé virker på både hjemmeside, Instagram og LinkedIn.</p></div>
+      <div class="reveal"><p class="eyebrow">Spørgsmål</p><div class="faq"><details><summary>Hvilke formater leverer du?</summary><p>Typisk MP4 i de størrelser, du skal bruge, fx 16:9, 9:16 og 1:1. Til hjemmesider kan jeg også levere lette WebM-filer.</p></details><details><summary>Kan du bruge mine egne optagelser?</summary><p>Ja. Jeg kan klippe og animere ovenpå dine optagelser, eller tage billeder og video, hvis du mangler materiale.</p></details><details><summary>Hvor lang skal en video være?</summary><p>Til sociale medier er 6–30 sekunder ofte nok. Vi aftaler længden ud fra, hvor videoen skal bruges.</p></details></div></div>
+    </div>
+  </section>
+  <section class="section cases"><div class="section-head"><p class="eyebrow reveal">Eksempler</p><h2 class="reveal">Noget, jeg har lavet</h2></div><div class="motion compact-motion">
+      <article class="mcard mfeature reveal">
+        <div class="mmedia hika">
+          <figure class="phone"><video class="mvid" data-autoplay muted loop playsinline preload="none" poster="../../assets/media/hikayahuset-poster.jpg" aria-label="Intro til Hikayahuset: dronen stiger op over huset i solnedgang, og titlen lægger sig bag horisonten"><source src="../../assets/media/hikayahuset-web.mp4" type="video/mp4"></video><button class="msound" type="button" aria-pressed="false" aria-label="Slå lyd til"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="on" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/><path class="off" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button></figure>
+          <figure class="print"><img src="../../assets/img/hikayahuset-plakat.jpg" alt="Plakat for Hikayahuset: titlen ligger bag horisonten over et luftfoto af huset" loading="lazy" width="900" height="1350"></figure>
+        </div>
+        <div class="mbody"><p class="kicker">Motion graphic · Plakat</p><h3>Hikayahuset: en fortælling</h3><p>Intro til opholdsstedet Hikayahuset. Dronen stiger op over huset i solnedgang, og titlen lægger sig bag horisonten, så typografien bliver en del af landskabet. Plakaten bruger samme greb.</p><p class="role"><b>Leveret:</b> Motion design, typografi og plakat.</p></div>
+      </article>
+      <article class="mcard reveal">
+        <figure class="mmedia wide16"><video class="mvid" data-autoplay muted loop playsinline preload="none" poster="../../assets/media/sinan-polat-logo-story-poster.jpg" aria-label="Logoanimation: prikken i Sinan Polat vågner, retter det skæve l op og bliver til logoet igen"><source src="../../assets/media/sinan-polat-logo-story.webm" type="video/webm"><source src="../../assets/media/sinan-polat-logo-story.mp4" type="video/mp4"></video><button class="msound" type="button" aria-pressed="false" aria-label="Slå lyd til"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="spk" d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path class="on" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/><path class="off" d="M16 9.5l5 5M21 9.5l-5 5"/></svg></button></figure>
+        <div class="mbody"><p class="kicker">Logoanimation · 7 sek.</p><h3>Prikken retter l'et op</h3><p>Punktummet i mit logo vågner, skubber det skæve l på plads og bliver til et punktum igen. Sådan kan et logo få personlighed.</p></div>
+      </article>
+      <article class="mcard reveal">
+        <figure class="mmedia wide16"><video class="mvid" controls playsinline preload="none" poster="../../assets/media/sinan-polat-punktum-poster.jpg" aria-label="Animeret fortælling: prikken fra logoet rejser gennem designprocessen"><source src="../../assets/media/sinan-polat-punktum.webm" type="video/webm"><source src="../../assets/media/sinan-polat-punktum.mp4" type="video/mp4"></video></figure>
+        <div class="mbody"><p class="kicker">Animeret fortælling · 56 sek.</p><h3>Hvor andre sætter punktum</h3><p>Prikken fra mit logo rejser gennem designprocessen, fra interviews og post-its til en løsning, hvor svaret findes på under fem sekunder.</p></div>
+      </article>
+    </div></section>
+  <section class="section"><p class="eyebrow reveal">Andre ydelser</p><div class="related reveal"><a href="../../ydelser/hjemmeside/">Hjemmesider</a><a href="../../ydelser/webhosting/">Webhosting</a><a href="../../ydelser/google-ads/">Google Ads</a></div></section>
 </main>
-<section class="cta" aria-labelledby="ctaTitle">
-  <div class="wrap">
-    <h2 id="ctaTitle">Lad os tage en <em>snak</em>.</h2>
+<footer id="kontakt" class="contact">
+  <div class="contact-inner">
+    <p class="eyebrow">Klar? — Kontakt</p>
+    <h2 class="big">Skal vi tage en <em>snak</em> om motion graphics?</h2>
     <p>Fortæl kort, hvad du har brug for, så vender jeg tilbage med et uforpligtende tilbud. Typisk inden for en hverdag.</p>
-    <div class="actions">
-      <a class="button light" href="../../kontakt/">Få et uforpligtende tilbud</a>
-      <a class="button ghost-light" href="tel:+4550584245">Ring 50 58 42 45</a>
-      <a class="button ghost-light" href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a>
+    <div class="contact-actions">
+      <a class="button light magnetic" href="../../kontakt/">Få et uforpligtende tilbud →</a>
+      <button class="button ghost-light magnetic" type="button" id="copyMail"><span class="copy-label">sinanp2020@hotmail.com</span><span class="copy-ico" aria-hidden="true">⧉</span></button>
+      <a class="button ghost-light magnetic" href="tel:+4550584245">50 58 42 45</a>
+      <a class="button ghost-light magnetic" href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
-  </div>
-</section>
-<footer class="footer">
-  <div class="wrap footer-grid">
-    <div>
-      <a class="brand" href="../../">Sinan Polat<i aria-hidden="true"></i></a>
-      <p style="margin-top:12px;max-width:34ch">Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder, der vil fremstå skarpt og blive fundet.</p>
+    <div class="foot-grid">
+      <div><span class="foot-brand">Sinan Polat<i></i></span><p style="margin-top:10px;max-width:36ch">Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder, der vil fremstå skarpt og blive fundet.</p></div>
+      <div><h3>Ydelser</h3><ul><li><a href="../../ydelser/hjemmeside/">Hjemmesider</a></li><li><a href="../../ydelser/webhosting/">Webhosting</a></li><li><a href="../../ydelser/google-ads/">Google Ads</a></li><li><a href="../../ydelser/motion-graphics/">Motion graphics</a></li></ul></div>
+      <div><h3>Sider</h3><ul><li><a href="../../cases/">Cases</a></li><li><a href="../../om/">Om mig</a></li><li><a href="../../kontakt/">Kontakt</a></li></ul></div>
     </div>
-    <div><h2>Ydelser</h2><ul><li><a href="../../ydelser/hjemmeside/">Hjemmesider</a></li><li><a href="../../ydelser/webhosting/">Webhosting</a></li><li><a href="../../ydelser/google-ads/">Google Ads</a></li><li><a href="../../ydelser/motion-graphics/">Motion graphics</a></li></ul></div>
-    <div><h2>Kontakt</h2><ul>
-      <li><a href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a></li>
-      <li><a href="tel:+4550584245">50 58 42 45</a></li>
-      <li><a href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-      <li><a href="../../kontakt/">Kontaktformular</a></li>
-    </ul></div>
-  </div>
-  <div class="wrap">
     <!-- Har du et CVR-nummer, så skriv det her, fx: · CVR 12345678 -->
-    <p class="fine">© <span data-year>2026</span> Sinan Polat · Kokkedal</p>
+    <p class="fine">© <span data-year>2026</span> Sinan Polat · Kokkedal · Siden er lavet i HTML, CSS og JavaScript sammen med Claude.</p>
   </div>
 </footer>
-<script src="../../assets/site.js?v=1" defer></script>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="../../assets/site.js?v=2" defer></script>
+<script src="../../assets/dot.js?v=2" defer></script>
 </body>
 </html>

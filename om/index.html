@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="da">
+<html lang="da" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,85 +14,83 @@
 <meta property="og:url" content="https://sinanp.dk/om/">
 <meta property="og:image" content="https://sinanp.dk/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F5F2EC">
+<meta name="theme-color" content="#101114">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="../assets/style.css?v=1">
+<link rel="stylesheet" href="../assets/base.css?v=2">
+<link rel="stylesheet" href="../assets/dot.css?v=2">
+<link rel="stylesheet" href="../assets/biz.css?v=2">
+<script>
+  /* Mørkt tema som standard. Har den besøgende valgt lyst, huskes det. */
+  (function(){try{var t=localStorage.getItem('tema-sinanp');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();
+</script>
 </head>
 <body>
 <a class="skip" href="#indhold">Spring til indhold</a>
+<div class="progress" aria-hidden="true"></div>
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="../" aria-label="Sinan Polat – forside">Sinan Polat<i aria-hidden="true"></i></a>
-    <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../#ydelser">Ydelser</a><a href="../cases/">Cases</a><a href="../om/" aria-current="page">Om mig</a><a href="../kontakt/">Kontakt</a><a class="nav-cta" href="../kontakt/">Få et tilbud</a></nav>
-    <a class="button small header-cta" href="../kontakt/">Få et tilbud</a>
-    <button class="menu-btn" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  <a class="brand" href="../" aria-label="Sinan Polat – forside">Sinan Polat<span class="dot"></span></a>
+  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../#ydelser">Ydelser</a><a href="../cases/">Cases</a><a href="../#proces">Proces</a><a href="../om/" data-page aria-current="page">Om mig</a><a href="../kontakt/">Kontakt</a></nav>
+  <div class="header-tools">
+    <a class="cv-link" href="../kontakt/">Få et tilbud <span class="arr" aria-hidden="true">→</span></a>
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Skift mellem lyst og mørkt tema">
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </div>
 </header>
 <main id="indhold">
-<section class="page-hero"><div class="wrap about">
-  <img src="../assets/img/sinan-polat.jpg" alt="Portræt af Sinan Polat" width="800" height="800">
-  <div>
+  <section class="page-hero">
     <nav class="crumbs" aria-label="Brødkrumme"><a href="../">Forside</a> › <span aria-current="page">Om mig</span></nav>
-    <p class="eyebrow">Om mig</p>
-    <h1 style="font-size:clamp(2.3rem,5vw,4rem)">Hej, jeg hedder <em>Sinan</em></h1>
-    <p class="lead" style="margin-top:1em">Jeg er multimediedesigner fra Kokkedal og hjælper virksomheder med at fremstå tydeligt og professionelt online.</p>
-    <p>Jeg er uddannet multimediedesigner og afslutter i december 2026 min professionsbachelor i Digital Konceptudvikling. Jeg har arbejdet med UX og brugerresearch, grafisk design, video og kommunikation i flere år, både på studiet og i studiejob.</p>
-    <p>Min tilgang er enkel: først forstår jeg, hvem dine kunder er, og hvad de leder efter. Så bygger jeg løsningen, så den svarer på det, og til sidst gør jeg den flot.</p>
-    <ul class="facts">
-      <li><b>UX først</b><span>Brugerne før løsningen</span></li>
-      <li><b>Struktur før stil</b><span>Indhold, der er let at finde</span></li>
-      <li><b>Fem sekunder</b><span>Budskabet skal forstås hurtigt</span></li>
-    </ul>
-  </div>
-</div></section>
-<section class="section" style="padding-top:20px"><div class="wrap split">
-  <div class="panel"><h2>Værktøjer</h2><ul class="checks">
-    <li><b>Design og prototyper</b><span>Figma, Photoshop, Illustrator, InDesign, Canva</span></li>
-    <li><b>Video og motion</b><span>Premiere Pro, After Effects, Audition, Lightroom</span></li>
-    <li><b>Web</b><span>HTML, CSS, JavaScript, Umbraco, Siteimprove, webtilgængelighed</span></li>
-    <li><b>Markedsføring</b><span>SEO, LinkedIn-annoncer, Google Ads, Mailchimp</span></li>
-  </ul></div>
-  <div class="prose"><h2 style="font-size:1.6rem">Hvorfor arbejde med mig?</h2>
-    <p>Du får én person, der kan se hele vejen rundt: hjemmesiden, teksterne, grafikken, videoen og annoncerne. Det giver en løsning, der hænger sammen, og du skal ikke koordinere mellem flere bureauer.</p>
-    <p>Jeg er åben om, hvordan jeg arbejder. Jeg bruger moderne værktøjer, også AI, til at arbejde hurtigere, men idéer, design og ansvar er mine.</p>
-    <div class="actions"><a class="button" href="../kontakt/">Skriv til mig</a><a class="button ghost" href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a></div>
-  </div>
-</div></section>
+  </section>
+  <section class="section about" style="padding-top:0">
+    <div class="about-photo reveal"><img src="../assets/img/sinan-polat.jpg" alt="Portræt af Sinan Polat" width="800" height="800"><span class="photo-tag">Kokkedal</span></div>
+    <div class="about-text">
+      <p class="eyebrow reveal">Om mig</p>
+      <h1 class="reveal" style="font-size:clamp(2.3rem,5vw,4rem)">Hej, jeg hedder <em>Sinan</em>.</h1>
+      <p class="lead reveal" style="margin-top:.8em">Jeg hjælper virksomheder med at fremstå tydeligt og professionelt online.</p>
+      <p class="reveal">Jeg er uddannet multimediedesigner og afslutter i december 2026 min professionsbachelor i Digital Konceptudvikling. Jeg har arbejdet med UX og brugerresearch, grafisk design, video og kommunikation i flere år, både på studiet og i studiejob.</p>
+      <p class="reveal">Min tilgang er enkel: først forstår jeg, hvem dine kunder er, og hvad de leder efter. Så bygger jeg løsningen, så den svarer på det, og til sidst gør jeg den flot.</p>
+      <ul class="principles reveal"><li><span>01</span>Kunden før løsningen</li><li><span>02</span>Struktur før stil</li><li><span>03</span>Budskabet skal forstås på 5 sekunder</li></ul>
+    </div>
+  </section>
+  <section class="section skills-section">
+    <p class="eyebrow reveal">Værktøjskassen</p>
+    <h2 class="reveal">Det arbejder jeg med</h2>
+    <div class="skills">
+      <div class="skill reveal"><span class="skill-ico" aria-hidden="true">◇</span><h3>Design og video</h3><p>Figma, Photoshop, Illustrator, InDesign, Canva, Premiere Pro, After Effects, Audition og Lightroom.</p></div>
+      <div class="skill reveal"><span class="skill-ico" aria-hidden="true">&lt;/&gt;</span><h3>Web</h3><p>HTML, CSS og JavaScript, Umbraco, Siteimprove, webtilgængelighed (WCAG), domæner, DNS og hosting.</p></div>
+      <div class="skill reveal"><span class="skill-ico" aria-hidden="true">◎</span><h3>Markedsføring og UX</h3><p>Google Ads, LinkedIn-annoncer, SEO, Mailchimp, brugerinterviews, usability-test og brugerrejser.</p></div>
+    </div>
+    <p class="note reveal">Jeg bruger moderne værktøjer, også AI, til at arbejde hurtigere. Idéer, design og ansvar er mine.</p>
+  </section>
 </main>
-<section class="cta" aria-labelledby="ctaTitle">
-  <div class="wrap">
-    <h2 id="ctaTitle">Lad os tage en <em>snak</em>.</h2>
+<footer id="kontakt" class="contact">
+  <div class="contact-inner">
+    <p class="eyebrow">05 — Kontakt</p>
+    <h2 class="big">Lad os gøre din virksomhed <em>let</em> at vælge.</h2>
     <p>Fortæl kort, hvad du har brug for, så vender jeg tilbage med et uforpligtende tilbud. Typisk inden for en hverdag.</p>
-    <div class="actions">
-      <a class="button light" href="../kontakt/">Få et uforpligtende tilbud</a>
-      <a class="button ghost-light" href="tel:+4550584245">Ring 50 58 42 45</a>
-      <a class="button ghost-light" href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a>
+    <div class="contact-actions">
+      <a class="button light magnetic" href="../kontakt/">Få et uforpligtende tilbud →</a>
+      <button class="button ghost-light magnetic" type="button" id="copyMail"><span class="copy-label">sinanp2020@hotmail.com</span><span class="copy-ico" aria-hidden="true">⧉</span></button>
+      <a class="button ghost-light magnetic" href="tel:+4550584245">50 58 42 45</a>
+      <a class="button ghost-light magnetic" href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
-  </div>
-</section>
-<footer class="footer">
-  <div class="wrap footer-grid">
-    <div>
-      <a class="brand" href="../">Sinan Polat<i aria-hidden="true"></i></a>
-      <p style="margin-top:12px;max-width:34ch">Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder, der vil fremstå skarpt og blive fundet.</p>
+    <div class="foot-grid">
+      <div><span class="foot-brand">Sinan Polat<i></i></span><p style="margin-top:10px;max-width:36ch">Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder, der vil fremstå skarpt og blive fundet.</p></div>
+      <div><h3>Ydelser</h3><ul><li><a href="../ydelser/hjemmeside/">Hjemmesider</a></li><li><a href="../ydelser/webhosting/">Webhosting</a></li><li><a href="../ydelser/google-ads/">Google Ads</a></li><li><a href="../ydelser/motion-graphics/">Motion graphics</a></li></ul></div>
+      <div><h3>Sider</h3><ul><li><a href="../cases/">Cases</a></li><li><a href="../om/">Om mig</a></li><li><a href="../kontakt/">Kontakt</a></li></ul></div>
     </div>
-    <div><h2>Ydelser</h2><ul><li><a href="../ydelser/hjemmeside/">Hjemmesider</a></li><li><a href="../ydelser/webhosting/">Webhosting</a></li><li><a href="../ydelser/google-ads/">Google Ads</a></li><li><a href="../ydelser/motion-graphics/">Motion graphics</a></li></ul></div>
-    <div><h2>Kontakt</h2><ul>
-      <li><a href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a></li>
-      <li><a href="tel:+4550584245">50 58 42 45</a></li>
-      <li><a href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-      <li><a href="../kontakt/">Kontaktformular</a></li>
-    </ul></div>
-  </div>
-  <div class="wrap">
     <!-- Har du et CVR-nummer, så skriv det her, fx: · CVR 12345678 -->
-    <p class="fine">© <span data-year>2026</span> Sinan Polat · Kokkedal</p>
+    <p class="fine">© <span data-year>2026</span> Sinan Polat · Kokkedal · Siden er lavet i HTML, CSS og JavaScript sammen med Claude.</p>
   </div>
 </footer>
-<script src="../assets/site.js?v=1" defer></script>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="../assets/site.js?v=2" defer></script>
+<script src="../assets/dot.js?v=2" defer></script>
 </body>
 </html>

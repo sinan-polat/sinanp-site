@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="da">
+<html lang="da" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,77 +14,80 @@
 <meta property="og:url" content="https://sinanp.dk/ydelser/google-ads/">
 <meta property="og:image" content="https://sinanp.dk/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F5F2EC">
+<meta name="theme-color" content="#101114">
 <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="../../assets/style.css?v=1">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Google Ads", "description": "Bliv fundet, når kunderne søger efter det, du tilbyder. Opsætning af Google Ads-kampagner, søgeord, annoncetekster og måling, så du kan se, hvad annoncerne giver.", "url": "https://sinanp.dk/ydelser/google-ads/", "areaServed": "DK", "provider": {"@type": "ProfessionalService", "name": "Sinan Polat", "url": "https://sinanp.dk/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Forside", "item": "https://sinanp.dk/"}, {"@type": "ListItem", "position": 2, "name": "Ydelser", "item": "https://sinanp.dk/#ydelser"}, {"@type": "ListItem", "position": 3, "name": "Google Ads", "item": "https://sinanp.dk/ydelser/google-ads/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Hvor stort skal budgettet være?", "acceptedAnswer": {"@type": "Answer", "text": "Det afhænger af din branche og dit område. Vi aftaler et budget, du er tryg ved, og starter i det små, så vi kan se, hvad der virker."}}, {"@type": "Question", "name": "Betaler jeg annoncerne til dig eller Google?", "acceptedAnswer": {"@type": "Answer", "text": "Annoncekronerne betales direkte til Google fra din egen konto. Du betaler mig for opsætning og optimering."}}, {"@type": "Question", "name": "Hvornår kan jeg se resultater?", "acceptedAnswer": {"@type": "Answer", "text": "Annoncerne kan vises samme dag, de er godkendt. Det tager typisk nogle uger at samle data nok til at optimere ordentligt."}}]}]}</script>
+<link rel="stylesheet" href="../../assets/base.css?v=2">
+<link rel="stylesheet" href="../../assets/dot.css?v=2">
+<link rel="stylesheet" href="../../assets/biz.css?v=2">
+<script>
+  /* Mørkt tema som standard. Har den besøgende valgt lyst, huskes det. */
+  (function(){try{var t=localStorage.getItem('tema-sinanp');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Google Ads", "description": "Bliv fundet, når kunderne søger efter det, du tilbyder. Opsætning af Google Ads-kampagner, søgeord, annoncetekster og måling, så du kan se, hvad annoncerne giver.", "url": "https://sinanp.dk/ydelser/google-ads/", "areaServed": "DK", "provider": {"@type": "ProfessionalService", "name": "Sinan Polat", "url": "https://sinanp.dk/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Forside", "item": "https://sinanp.dk/"}, {"@type": "ListItem", "position": 2, "name": "Google Ads", "item": "https://sinanp.dk/ydelser/google-ads/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Hvor stort skal budgettet være?", "acceptedAnswer": {"@type": "Answer", "text": "Det afhænger af din branche og dit område. Vi aftaler et budget, du er tryg ved, og starter i det små, så vi kan se, hvad der virker."}}, {"@type": "Question", "name": "Betaler jeg annoncerne til dig eller Google?", "acceptedAnswer": {"@type": "Answer", "text": "Annoncekronerne betales direkte til Google fra din egen konto. Du betaler mig for opsætning og optimering."}}, {"@type": "Question", "name": "Hvornår kan jeg se resultater?", "acceptedAnswer": {"@type": "Answer", "text": "Annoncerne kan vises samme dag, de er godkendt. Det tager typisk nogle uger at samle data nok til at optimere ordentligt."}}]}]}</script>
 </head>
 <body>
 <a class="skip" href="#indhold">Spring til indhold</a>
+<div class="progress" aria-hidden="true"></div>
 <header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="../../" aria-label="Sinan Polat – forside">Sinan Polat<i aria-hidden="true"></i></a>
-    <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../../#ydelser" aria-current="page">Ydelser</a><a href="../../cases/">Cases</a><a href="../../om/">Om mig</a><a href="../../kontakt/">Kontakt</a><a class="nav-cta" href="../../kontakt/">Få et tilbud</a></nav>
-    <a class="button small header-cta" href="../../kontakt/">Få et tilbud</a>
-    <button class="menu-btn" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  <a class="brand" href="../../" aria-label="Sinan Polat – forside">Sinan Polat<span class="dot"></span></a>
+  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../../#ydelser" data-page aria-current="page">Ydelser</a><a href="../../cases/">Cases</a><a href="../../#proces">Proces</a><a href="../../om/">Om mig</a><a href="../../kontakt/">Kontakt</a></nav>
+  <div class="header-tools">
+    <a class="cv-link" href="../../kontakt/">Få et tilbud <span class="arr" aria-hidden="true">→</span></a>
+    <button class="icon-btn" id="themeToggle" type="button" aria-label="Skift mellem lyst og mørkt tema">
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Åbn menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </div>
 </header>
 <main id="indhold">
-<section class="page-hero">
-  <div class="wrap">
+  <section class="page-hero">
     <nav class="crumbs" aria-label="Brødkrumme"><a href="../../">Forside</a> › <a href="../../#ydelser">Ydelser</a> › <span aria-current="page">Google Ads</span></nav>
     <div class="split">
       <div>
-        <p class="eyebrow">Google Ads</p>
-        <h1 style="font-size:clamp(2.3rem,5.4vw,4.2rem)">Google Ads, der rammer dem, der <em>søger</em> efter dig</h1>
-        <p class="lead" style="margin-top:1em">Med Google Ads kan du stå øverst, når nogen i dit område søger efter netop det, du laver. Jeg sætter kampagnerne op og følger med i, om pengene giver henvendelser.</p>
-        <div class="actions"><a class="button" href="../../kontakt/?ydelse=Google Ads">Få et tilbud på google ads →</a><a class="button ghost" href="tel:+4550584245">Ring 50 58 42 45</a></div>
+        <p class="eyebrow reveal">Ydelse · Google Ads</p>
+        <h1 class="reveal">Google Ads, der rammer dem, der <em>søger</em> efter dig</h1>
+        <p class="lead reveal">Med Google Ads kan du stå øverst, når nogen i dit område søger efter netop det, du laver. Jeg sætter kampagnerne op og følger med i, om pengene giver henvendelser.</p>
+        <p class="actions reveal"><a class="button magnetic" href="../../kontakt/?ydelse=Google Ads">Få et tilbud →</a><a class="button ghost magnetic" href="tel:+4550584245">Ring 50 58 42 45</a></p>
       </div>
-      <div class="panel reveal"><h2>Det får du</h2><ul class="checks"><li><b>Søgeord og målgruppe</b><span>Vi finder de søgninger, dine kunder faktisk laver, og udelukker dem, der koster penge uden at give kunder.</span></li><li><b>Annoncetekster og landingsside</b><span>Annoncer, der svarer på søgningen, og en side på din hjemmeside, der fører videre til kontakt.</span></li><li><b>Måling af henvendelser</b><span>Opsætning af konverteringer, så du kan se opkald, formularer og klik, der kommer fra annoncerne.</span></li><li><b>Budget, du styrer</b><span>Du bestemmer det månedlige budget, og vi justerer løbende, hvor pengene bruges bedst.</span></li><li><b>Enkel rapport</b><span>Hver måned får du et kort overblik over, hvad annoncerne har givet, og hvad vi justerer.</span></li></ul></div>
+      <div class="panel reveal"><h2>Det får du</h2><ul class="checklist"><li><span>01</span><div><b>Søgeord og målgruppe</b><small>Vi finder de søgninger, dine kunder faktisk laver, og udelukker dem, der koster penge uden at give kunder.</small></div></li><li><span>02</span><div><b>Annoncetekster og landingsside</b><small>Annoncer, der svarer på søgningen, og en side på din hjemmeside, der fører videre til kontakt.</small></div></li><li><span>03</span><div><b>Måling af henvendelser</b><small>Opsætning af konverteringer, så du kan se opkald, formularer og klik, der kommer fra annoncerne.</small></div></li><li><span>04</span><div><b>Budget, du styrer</b><small>Du bestemmer det månedlige budget, og vi justerer løbende, hvor pengene bruges bedst.</small></div></li><li><span>05</span><div><b>Enkel rapport</b><small>Hver måned får du et kort overblik over, hvad annoncerne har givet, og hvad vi justerer.</small></div></li></ul></div>
     </div>
-  </div>
-</section>
-<section class="section" style="padding-top:20px"><div class="wrap split">
-  <div class="prose"><p>Annoncer kan hurtigt blive dyre, hvis de vises for de forkerte søgninger. Derfor starter jeg med søgeord, geografi og en tydelig landingsside, så klikket fører hen til noget, der giver mening for kunden.</p><p>Jeg arbejder datadrevet: vi måler, hvad der giver henvendelser, og flytter budgettet derhen. Jeg har erfaring med betalt annoncering på LinkedIn og med SEO, og Google Ads bygger på samme principper.</p></div>
-  <div><h2 style="font-size:1.6rem">Ofte stillede spørgsmål</h2><div class="faq"><details><summary>Hvor stort skal budgettet være?</summary><p>Det afhænger af din branche og dit område. Vi aftaler et budget, du er tryg ved, og starter i det små, så vi kan se, hvad der virker.</p></details><details><summary>Betaler jeg annoncerne til dig eller Google?</summary><p>Annoncekronerne betales direkte til Google fra din egen konto. Du betaler mig for opsætning og optimering.</p></details><details><summary>Hvornår kan jeg se resultater?</summary><p>Annoncerne kan vises samme dag, de er godkendt. Det tager typisk nogle uger at samle data nok til at optimere ordentligt.</p></details></div></div>
-</div></section>
-
-<section class="section"><div class="wrap"><p class="eyebrow">Andre ydelser</p><div class="related"><a href="../../ydelser/hjemmeside/">Hjemmesider</a><a href="../../ydelser/webhosting/">Webhosting</a><a href="../../ydelser/motion-graphics/">Motion graphics</a></div></div></section>
+  </section>
+  <section class="section" style="padding-top:clamp(40px,5vw,64px)">
+    <div class="split">
+      <div class="prose reveal"><p class="eyebrow">Sådan griber jeg det an</p><p>Annoncer kan hurtigt blive dyre, hvis de vises for de forkerte søgninger. Derfor starter jeg med søgeord, geografi og en tydelig landingsside, så klikket fører hen til noget, der giver mening for kunden.</p><p>Jeg arbejder datadrevet: vi måler, hvad der giver henvendelser, og flytter budgettet derhen. Jeg har erfaring med betalt annoncering på LinkedIn og med SEO, og Google Ads bygger på samme principper.</p></div>
+      <div class="reveal"><p class="eyebrow">Spørgsmål</p><div class="faq"><details><summary>Hvor stort skal budgettet være?</summary><p>Det afhænger af din branche og dit område. Vi aftaler et budget, du er tryg ved, og starter i det små, så vi kan se, hvad der virker.</p></details><details><summary>Betaler jeg annoncerne til dig eller Google?</summary><p>Annoncekronerne betales direkte til Google fra din egen konto. Du betaler mig for opsætning og optimering.</p></details><details><summary>Hvornår kan jeg se resultater?</summary><p>Annoncerne kan vises samme dag, de er godkendt. Det tager typisk nogle uger at samle data nok til at optimere ordentligt.</p></details></div></div>
+    </div>
+  </section>
+  
+  <section class="section"><p class="eyebrow reveal">Andre ydelser</p><div class="related reveal"><a href="../../ydelser/hjemmeside/">Hjemmesider</a><a href="../../ydelser/webhosting/">Webhosting</a><a href="../../ydelser/motion-graphics/">Motion graphics</a></div></section>
 </main>
-<section class="cta" aria-labelledby="ctaTitle">
-  <div class="wrap">
-    <h2 id="ctaTitle">Lad os tage en <em>snak</em>.</h2>
+<footer id="kontakt" class="contact">
+  <div class="contact-inner">
+    <p class="eyebrow">Klar? — Kontakt</p>
+    <h2 class="big">Skal vi tage en <em>snak</em> om google ads?</h2>
     <p>Fortæl kort, hvad du har brug for, så vender jeg tilbage med et uforpligtende tilbud. Typisk inden for en hverdag.</p>
-    <div class="actions">
-      <a class="button light" href="../../kontakt/">Få et uforpligtende tilbud</a>
-      <a class="button ghost-light" href="tel:+4550584245">Ring 50 58 42 45</a>
-      <a class="button ghost-light" href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a>
+    <div class="contact-actions">
+      <a class="button light magnetic" href="../../kontakt/">Få et uforpligtende tilbud →</a>
+      <button class="button ghost-light magnetic" type="button" id="copyMail"><span class="copy-label">sinanp2020@hotmail.com</span><span class="copy-ico" aria-hidden="true">⧉</span></button>
+      <a class="button ghost-light magnetic" href="tel:+4550584245">50 58 42 45</a>
+      <a class="button ghost-light magnetic" href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
-  </div>
-</section>
-<footer class="footer">
-  <div class="wrap footer-grid">
-    <div>
-      <a class="brand" href="../../">Sinan Polat<i aria-hidden="true"></i></a>
-      <p style="margin-top:12px;max-width:34ch">Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder, der vil fremstå skarpt og blive fundet.</p>
+    <div class="foot-grid">
+      <div><span class="foot-brand">Sinan Polat<i></i></span><p style="margin-top:10px;max-width:36ch">Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder, der vil fremstå skarpt og blive fundet.</p></div>
+      <div><h3>Ydelser</h3><ul><li><a href="../../ydelser/hjemmeside/">Hjemmesider</a></li><li><a href="../../ydelser/webhosting/">Webhosting</a></li><li><a href="../../ydelser/google-ads/">Google Ads</a></li><li><a href="../../ydelser/motion-graphics/">Motion graphics</a></li></ul></div>
+      <div><h3>Sider</h3><ul><li><a href="../../cases/">Cases</a></li><li><a href="../../om/">Om mig</a></li><li><a href="../../kontakt/">Kontakt</a></li></ul></div>
     </div>
-    <div><h2>Ydelser</h2><ul><li><a href="../../ydelser/hjemmeside/">Hjemmesider</a></li><li><a href="../../ydelser/webhosting/">Webhosting</a></li><li><a href="../../ydelser/google-ads/">Google Ads</a></li><li><a href="../../ydelser/motion-graphics/">Motion graphics</a></li></ul></div>
-    <div><h2>Kontakt</h2><ul>
-      <li><a href="mailto:sinanp2020@hotmail.com">sinanp2020@hotmail.com</a></li>
-      <li><a href="tel:+4550584245">50 58 42 45</a></li>
-      <li><a href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-      <li><a href="../../kontakt/">Kontaktformular</a></li>
-    </ul></div>
-  </div>
-  <div class="wrap">
     <!-- Har du et CVR-nummer, så skriv det her, fx: · CVR 12345678 -->
-    <p class="fine">© <span data-year>2026</span> Sinan Polat · Kokkedal</p>
+    <p class="fine">© <span data-year>2026</span> Sinan Polat · Kokkedal · Siden er lavet i HTML, CSS og JavaScript sammen med Claude.</p>
   </div>
 </footer>
-<script src="../../assets/site.js?v=1" defer></script>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="../../assets/site.js?v=2" defer></script>
+<script src="../../assets/dot.js?v=2" defer></script>
 </body>
 </html>
