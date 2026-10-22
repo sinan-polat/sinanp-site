@@ -34,7 +34,7 @@
 <div class="progress" aria-hidden="true"></div>
 <header class="site-header">
   <a class="brand" href="../../" aria-label="Sinan Polat – forside">Sinan Polat<span class="dot"></span></a>
-  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../../#ydelser" data-page aria-current="page">Ydelser</a><a href="../../cases/">Cases</a><a href="../../#proces">Proces</a><a href="../../om/">Om mig</a><a href="../../kontakt/">Kontakt</a></nav>
+  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="../../ydelser/" data-page aria-current="page">Ydelser</a><a href="../../cases/">Cases</a><a href="../../om/">Om mig</a><a href="../../kontakt/">Kontakt</a></nav>
   <div class="header-tools">
     <a class="cv-link" href="../../kontakt/">Få et tilbud <span class="arr" aria-hidden="true">→</span></a>
     <button class="icon-btn" id="themeToggle" type="button" aria-label="Skift mellem lyst og mørkt tema">
@@ -52,7 +52,7 @@
         <p class="eyebrow reveal">Ydelse · Webhosting</p>
         <h1 class="reveal">Webhosting, så du ikke skal <em>tænke</em> på det</h1>
         <p class="lead reveal">En hjemmeside skal ligge et sted, være sikker og blive holdt ved lige. Jeg tager mig af det tekniske, så du har én at ringe til, hvis der er noget.</p>
-        <p class="actions reveal"><a class="button magnetic" href="../../kontakt/?ydelse=Webhosting">Få et tilbud →</a><a class="button ghost magnetic" href="tel:+4550584245">Ring 50 58 42 45</a></p>
+        <p class="actions reveal"><a class="button magnetic" href="#tilbud">Få et tilbud →</a><a class="button ghost magnetic" href="tel:+4550584245">Ring 50 58 42 45</a></p>
       </div>
       <div class="panel reveal"><h2>Det får du</h2><ul class="checklist"><li><span>01</span><div><b>Opsætning af hosting</b><small>Din hjemmeside lægges på en stabil og hurtig hostingløsning, der passer til siden.</small></div></li><li><span>02</span><div><b>Domæne og DNS</b><small>Jeg kobler dit domæne til siden og sætter DNS korrekt op, også hvis du allerede har en mail på domænet.</small></div></li><li><span>03</span><div><b>Https og sikkerhed</b><small>Siden kører med et gyldigt certifikat, så browseren viser den som sikker.</small></div></li><li><span>04</span><div><b>Små rettelser og opdateringer</b><small>Nye tekster, billeder eller åbningstider. Send en mail, så retter jeg det.</small></div></li><li><span>05</span><div><b>Overvågning</b><small>Jeg holder øje med, at siden er oppe, og reagerer, hvis noget ikke virker.</small></div></li><li><span>06</span><div><b>Ét sted at henvende sig</b><small>Du skal ikke selv finde rundt i kontrolpaneler og DNS-indstillinger.</small></div></li></ul></div>
     </div>
@@ -81,11 +81,30 @@
         <div class="proto-frame"><img src="../../assets/img/lyng-ventilation.jpg" alt="Forsiden af Lyng Ventilations hjemmeside med overskriften Frisk luft ind. Varmen bliver." loading="lazy" width="1400" height="875"><span class="proto-cta">Se hjemmesiden ↗</span></div>
       </a>
     </div></section>
+  <section class="section lead-form" id="tilbud">
+    <div class="split">
+      <div class="reveal"><p class="eyebrow">Få et tilbud</p><h2>Skal jeg tage mig af din hjemmeside?</h2><p class="lead small">Skriv et par linjer, så vender jeg tilbage med et uforpligtende tilbud med fast pris.</p>
+        <ul class="hero-trust"><li>Uforpligtende</li><li>Fast pris</li><li>Svar inden for en hverdag</li></ul></div>
+      <div class="panel reveal"><form class="form" id="contactForm" novalidate>
+          <div class="field"><label for="navn">Navn</label><input id="navn" name="navn" autocomplete="name"><span class="err-msg">Skriv dit navn.</span></div>
+          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email"><span class="err-msg">Skriv en gyldig e-mail.</span></div>
+          <div class="field"><label for="telefon">Telefon <span class="opt">(valgfrit)</span></label><input id="telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel"></div>
+          <div class="field"><label for="virksomhed">Virksomhed <span class="opt">(valgfrit)</span></label><input id="virksomhed" name="virksomhed" autocomplete="organization"></div>
+          <fieldset class="full" style="border:0;padding:0;margin:0"><legend>Hvad drejer det sig om?</legend><div class="chips-pick"><label><input type="checkbox" name="ydelse" value="Hjemmeside"><span>Hjemmesider</span></label><label><input type="checkbox" name="ydelse" value="Webhosting" checked><span>Webhosting</span></label><label><input type="checkbox" name="ydelse" value="Google Ads"><span>Google Ads</span></label><label><input type="checkbox" name="ydelse" value="Motion graphics"><span>Motion graphics</span></label></div></fieldset>
+          <div class="full field"><label for="besked">Besked</label><textarea id="besked" name="besked" placeholder="Fortæl kort om din virksomhed, og hvad du har brug for."></textarea><span class="err-msg">Skriv en kort besked.</span></div>
+          <div class="full" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+            <p class="form-note">Uforpligtende. Svar typisk inden for en hverdag.</p>
+            <button class="button magnetic" type="submit">Send og få et tilbud →</button>
+          </div>
+        </form>
+        <p class="form-ok" id="formOk" tabindex="-1">Tak for din besked. Jeg vender tilbage hurtigst muligt.</p></div>
+    </div>
+  </section>
   <section class="section"><p class="eyebrow reveal">Andre ydelser</p><div class="related reveal"><a href="../../ydelser/hjemmeside/">Hjemmesider</a><a href="../../ydelser/google-ads/">Google Ads</a><a href="../../ydelser/motion-graphics/">Motion graphics</a></div></section>
 </main>
-<footer id="kontakt" class="contact">
+<footer id="kontakt" class="contact slim">
   <div class="contact-inner">
-    <p class="eyebrow">Klar? — Kontakt</p>
+    <p class="eyebrow">Klar?</p>
     <h2 class="big">Skal vi tage en <em>snak</em> om webhosting?</h2>
     <p>Fortæl kort, hvad du har brug for, så vender jeg tilbage med et uforpligtende tilbud. Typisk inden for en hverdag.</p>
     <div class="contact-actions">
@@ -95,7 +114,7 @@
       <a class="button ghost-light magnetic" href="https://www.linkedin.com/in/sinan-polat-sp" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
     <div class="foot-grid">
-      <div><span class="foot-brand">Sinan Polat<i></i></span><p style="margin-top:10px;max-width:36ch">Hjemmesider, webhosting, Google Ads og motion graphics til virksomheder, der vil fremstå skarpt og blive fundet.</p></div>
+      <div><span class="foot-brand">Sinan Polat<i></i></span><p style="margin-top:8px;max-width:34ch;font-size:.92rem">Hjemmesider, webhosting, Google Ads og motion graphics.</p></div>
       <div><h3>Ydelser</h3><ul><li><a href="../../ydelser/hjemmeside/">Hjemmesider</a></li><li><a href="../../ydelser/webhosting/">Webhosting</a></li><li><a href="../../ydelser/google-ads/">Google Ads</a></li><li><a href="../../ydelser/motion-graphics/">Motion graphics</a></li></ul></div>
       <div><h3>Sider</h3><ul><li><a href="../../cases/">Cases</a></li><li><a href="../../om/">Om mig</a></li><li><a href="../../kontakt/">Kontakt</a></li></ul></div>
     </div>
@@ -104,6 +123,7 @@
   </div>
 </footer>
 <div class="toast" role="status" aria-live="polite"></div>
+<div class="cta-bar" aria-label="Hurtig kontakt"><a class="button" href="../../kontakt/">Få et tilbud →</a><a class="button ghost" href="tel:+4550584245" aria-label="Ring 50 58 42 45">Ring</a></div>
 <script src="../../assets/site.js?v=2" defer></script>
 <script src="../../assets/dot.js?v=2" defer></script>
 </body>

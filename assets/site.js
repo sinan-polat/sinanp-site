@@ -71,6 +71,8 @@
   const word = $('.rotator-word');
   if (word && !reduceMotion) {
     const words = JSON.parse(word.dataset.words || '[]'); let wi = 0;
+    // usynlige kopier af alle ord i samme gittercelle, så bredden passer til det længste ord
+    words.forEach(w => { const g = document.createElement('span'); g.className = 'rotator-word'; g.textContent = w; g.setAttribute('aria-hidden', 'true'); g.style.visibility = 'hidden'; word.parentElement.appendChild(g); });
     if (words.length) setInterval(() => {
       word.classList.add('out');
       setTimeout(() => {
@@ -172,6 +174,25 @@
     });
     $$('input, textarea', form).forEach(el => el.addEventListener('input', () => { const f = el.closest('.field'); if (f) f.classList.remove('err'); }));
   }
+
+  /* ---------- Mobil-CTA: skjules øverst og ved kontaktsektionen ---------- */
+  const bar2 = $('.cta-bar'), foot = $('#kontakt'), heroEl = $('.hero, .page-hero'), formEl = $('#contactForm');
+  if (bar2) {
+    const upd = () => {
+      const pastTop = scrollY > (heroEl ? heroEl.offsetHeight * .55 : 200);
+      const atEnd = (foot && foot.getBoundingClientRect().top < innerHeight * .9) || (formEl && formEl.getBoundingClientRect().top < innerHeight * .9 && formEl.getBoundingClientRect().bottom > 0);
+      bar2.classList.toggle('hide', !pastTop || atEnd);
+    };
+    addEventListener('scroll', upd, { passive: true }); upd();
+  }
+
+  /* ---------- Måling til Google Ads / Analytics ----------
+     Når du har sat Google-tagget (gtag.js) ind i <head>, bliver opkald, mails og formularer
+     sendt som hændelser, så du kan måle konverteringer. Uden tag sker der ingenting. */
+  const track = (name, params) => { try { if (typeof window.gtag === 'function') window.gtag('event', name, params || {}); } catch (e) {} };
+  $$('a[href^="tel:"]').forEach(a => a.addEventListener('click', () => track('klik_telefon')));
+  $$('a[href^="mailto:"], #copyMail').forEach(a => a.addEventListener('click', () => track('klik_mail')));
+  if (formEl) formEl.addEventListener('submit', () => { if (!$$('.field.err', formEl).length) track('generate_lead', { side: location.pathname }); });
 
   $$('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 })();

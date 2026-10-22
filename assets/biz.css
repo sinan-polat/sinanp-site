@@ -106,3 +106,36 @@ a.skill p{margin-bottom:16px}
   .page-hero{padding-left:20px;padding-right:20px}
 }
 @media (max-width:640px){.contact-actions .button.light{grid-column:1/-1}}
+
+/* ---------- v3: tydelig CTA, smal footer, landingssider ---------- */
+/* Primær handling i accentfarven, så den skiller sig ud */
+.cv-link{background:var(--accent);color:#fff}
+.cv-link:hover{background:var(--ink);color:var(--bg)}
+.button:not(.ghost):not(.ghost-light):not(.light){background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 10px 28px -12px color-mix(in srgb,var(--accent) 80%,transparent)}
+.button:not(.ghost):not(.ghost-light):not(.light):hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.contact .button.light{background:var(--accent);border-color:var(--accent);color:#fff}
+.contact .button.light:hover{background:#F5F2EC;border-color:#F5F2EC;color:#15171C}
+
+/* Roterende ord: fast bredde, så overskriften ikke hopper */
+.rotator{display:inline-grid;vertical-align:bottom}
+.rotator-word{grid-area:1/1}
+
+/* Smal footer */
+.contact.slim{margin-top:clamp(56px,8vw,96px);padding:clamp(44px,6vw,64px) 24px 28px}
+.contact.slim .big{font-size:clamp(2rem,4.4vw,3.2rem);max-width:none;margin-bottom:.25em}
+.contact.slim .contact-actions{margin:22px 0 30px}
+.contact.slim .foot-grid{padding:24px 0 0;gap:18px}
+.contact.slim .foot-grid ul{gap:4px;font-size:.92rem}
+.contact.slim .fine{margin-top:22px;padding-top:16px}
+
+/* Landingsside: formular */
+.lead-form h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+
+/* Mobil: fast bjælke med de to vigtigste handlinger */
+.cta-bar{display:none}
+@media (max-width:760px){
+  .cta-bar{display:grid;grid-template-columns:1fr auto;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:80;padding:8px;border-radius:999px;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);box-shadow:0 18px 40px -16px rgba(0,0,0,.5);transition:transform .35s var(--ease),opacity .35s}
+  .cta-bar .button{padding:12px 18px}
+  .cta-bar.hide{transform:translateY(140%);opacity:0;pointer-events:none}
+  body{padding-bottom:84px}
+}
