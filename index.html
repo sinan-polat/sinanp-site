@@ -20,9 +20,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="assets/base.css?v=4">
-<link rel="stylesheet" href="assets/dot.css?v=4">
-<link rel="stylesheet" href="assets/biz.css?v=4">
+<link rel="stylesheet" href="assets/base.css?v=5">
+<link rel="stylesheet" href="assets/dot.css?v=5">
+<link rel="stylesheet" href="assets/biz.css?v=5">
 <script>
   /* Mørkt tema som standard. Har den besøgende valgt lyst, huskes det. */
   (function(){try{var t=localStorage.getItem('tema-sinanp');if(t==='light')document.documentElement.dataset.theme='light';}catch(e){}})();
@@ -34,9 +34,8 @@
 <div class="progress" aria-hidden="true"></div>
 <header class="site-header">
   <a class="brand" href="./" aria-label="Sinan Polat – forside">Sinan Polat<span class="dot"></span></a>
-  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="ydelser/">Ydelser</a><a href="cases/">Cases</a><a href="om/">Om mig</a><a href="kontakt/">Kontakt</a><a class="nav-switch" href="https://portfolio.sinanp.dk/">Portfolio ↗</a></nav>
+  <nav class="nav" id="nav" aria-label="Hovedmenu"><a href="ydelser/">Ydelser</a><a href="priser/">Priser</a><a href="cases/">Cases</a><a href="om/">Om mig</a><a href="kontakt/">Kontakt</a></nav>
   <div class="header-tools">
-    <nav class="site-tabs" aria-label="Skift side"><a class="on" href="./" aria-current="true">Forretning</a><a href="https://portfolio.sinanp.dk/">Portfolio</a></nav>
     <a class="cv-link" href="kontakt/">Få et tilbud <span class="arr" aria-hidden="true">→</span></a>
     <button class="icon-btn" id="themeToggle" type="button" aria-label="Skift mellem lyst og mørkt tema">
       <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
@@ -46,7 +45,7 @@
   </div>
 </header>
 <main id="top">
-  <section class="hero" id="indhold">
+  <section class="hero no-visual" id="indhold">
     <canvas class="hero-field" aria-hidden="true"></canvas>
     <div class="hero-inner">
       <div class="hero-text">
@@ -55,18 +54,11 @@
         <p class="lead reveal">Hej, jeg hedder Sinan 👋 Jeg er multimediedesigner med baggrund i <strong>UX</strong> og hjælper virksomheder med at blive fundet og valgt. Jeg bygger din <strong>hjemmeside</strong>, sørger for at den <strong>kører</strong>, skaffer kunder via <strong>Google Ads</strong> og laver <strong>motion graphics</strong>, der fanger blikket.</p>
         <p class="actions reveal">
           <a class="button magnetic" href="kontakt/">Få et tilbud <span aria-hidden="true">→</span></a>
-          <a class="button ghost magnetic" href="#cases">Se cases</a>
+          <a class="button ghost magnetic" href="priser/">Se priser</a>
         </p>
-        <ul class="hero-trust reveal"><li>Uforpligtende tilbud</li><li>Fast pris</li><li>Én kontaktperson</li></ul>
+        <ul class="hero-trust reveal"><li>Hjemmeside fra 2.495 kr.</li><li>Fast pris</li><li>Svar inden for en hverdag</li></ul>
       </div>
-      <div class="hero-visual reveal" data-parallax>
-        <div class="portrait"><img src="assets/img/sinan-polat.jpg" alt="Portræt af Sinan Polat" width="800" height="800"></div>
-        <span class="chip c1" data-depth="18">Hjemmesider</span>
-        <span class="chip c2" data-depth="-14">Google Ads</span>
-        <span class="chip c3" data-depth="22">Webhosting</span>
-        <span class="chip c4" data-depth="-20">Motion graphics</span>
-        <svg class="scribble" viewBox="0 0 120 60" aria-hidden="true"><path d="M5 40c20-30 40-30 50-5s30 20 55-20"/><path d="M100 10l12 5-7 11"/></svg>
-      </div>
+      <nav class="hero-menu reveal" aria-label="Ydelser og priser"><p class="kicker">Ydelser og priser</p><a href="ydelser/hjemmeside/"><span><b>Hjemmesider</b><small>Fra 2.495 kr.</small></span><i aria-hidden="true">→</i></a><a href="ydelser/webhosting/"><span><b>Webhosting</b><small>Fra 99 kr. om måneden</small></span><i aria-hidden="true">→</i></a><a href="ydelser/google-ads/"><span><b>Google Ads</b><small>Opsætning fra 1.495 kr.</small></span><i aria-hidden="true">→</i></a><a href="ydelser/motion-graphics/"><span><b>Motion graphics</b><small>Fra 995 kr.</small></span><i aria-hidden="true">→</i></a><a class="hm-all" href="priser/">Se alle priser →</a></nav>
     </div>
     <a class="scroll-hint" href="#cases" aria-label="Scroll ned"><span></span></a>
   </section>
@@ -123,7 +115,7 @@
 </footer>
 <div class="toast" role="status" aria-live="polite"></div>
 <div class="cta-bar" aria-label="Hurtig kontakt"><a class="button" href="kontakt/">Få et uforpligtende tilbud →</a></div>
-<script src="assets/site.js?v=4" defer></script>
-<script src="assets/dot.js?v=4" defer></script>
+<script src="assets/site.js?v=5" defer></script>
+<script src="assets/dot.js?v=5" defer></script>
 </body>
 </html>

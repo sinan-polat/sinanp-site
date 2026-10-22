@@ -179,3 +179,62 @@ a.skill p{margin-bottom:16px}
 .nav .nav-switch{display:none}
 @media (max-width:760px){.site-tabs{display:none}.nav .nav-switch{display:block}}
 @media (max-width:1100px) and (min-width:761px){.site-tabs a{padding:7px 10px}}
+
+/* ---------- v6: ingen faner, mindre luft, priser, forside uden billede ---------- */
+.site-tabs,.nav .nav-switch{display:none!important}
+.section{padding-top:clamp(44px,6vw,80px)}
+.page-hero.tight{padding-top:clamp(18px,3vw,36px);padding-bottom:4px}
+.page-hero.tight .crumbs{margin-bottom:12px}
+.page-hero.tight h1{margin-top:0}
+.contact.mini{margin-top:clamp(40px,6vw,64px)}
+.hero.no-visual{min-height:auto;padding:clamp(48px,9vw,120px) 0 clamp(48px,7vw,90px)}
+.hero.no-visual .hero-inner{grid-template-columns:1fr}
+.hero.no-visual .hero-text{max-width:860px}
+.hero.no-visual h1{font-size:clamp(2.6rem,7vw,5.6rem)}
+.price-hint{margin-top:14px;font-size:.95rem;color:var(--muted)}
+.price-hint a{color:var(--accent)}
+/* priser */
+.price-group{padding:22px 0;border-top:1px solid var(--line)}
+.price-group:first-child{border-top:0;padding-top:0}
+.price-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
+.price-head h2{font-size:clamp(1.5rem,2.6vw,2rem);margin:0}
+.price-head a{color:var(--accent);font-weight:600;font-size:.92rem;text-decoration:none;white-space:nowrap}
+.price-head a::after{content:" →"}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.price-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 22px;transition:border-color .2s,transform .3s var(--ease)}
+.price-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.price-card h3{font:500 .78rem var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 6px}
+.price{font:600 clamp(1.8rem,3vw,2.3rem)/1.1 var(--serif);margin:0}
+.price-sub{color:var(--muted);margin:4px 0 12px;font-size:.94rem}
+.price-card ul{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:6px;font-size:.95rem}
+.price-card li{display:grid;grid-template-columns:18px 1fr;gap:6px}
+.price-card li::before{content:"✓";color:var(--accent);font-weight:700}
+.price-card .button{margin-top:auto;align-self:flex-start}
+.price-foot{margin-top:18px}
+@media (max-width:640px){
+  .section{padding-top:40px}
+  .page-hero.tight{padding-top:14px}
+  .page-hero.tight h1{font-size:clamp(1.9rem,8.4vw,2.4rem)}
+  .hero.no-visual{padding:28px 0 40px}
+  .hero.no-visual h1{font-size:clamp(2.3rem,11vw,3.2rem)}
+  .hero.no-visual .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .hero.no-visual .actions .button{justify-content:center;padding-left:12px;padding-right:12px}
+  .price-card{padding:18px}
+  .price-card .button{align-self:stretch;justify-content:center}
+  .about-photo{max-height:260px;overflow:hidden;border-radius:18px}
+  .about-photo img{object-fit:cover;object-position:50% 25%;height:260px;width:100%}
+}
+/* hero: ydelser og priser i stedet for billede */
+.hero.no-visual .hero-inner{grid-template-columns:1.35fr .8fr;align-items:center}
+.hero-menu{background:color-mix(in srgb,var(--surface) 88%,transparent);border:1px solid var(--line);border-radius:22px;padding:10px 20px 14px;box-shadow:var(--shadow);backdrop-filter:blur(8px)}
+.hero-menu .kicker{margin:10px 0 4px;color:var(--muted)}
+.hero-menu a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.hero-menu a span{display:grid}
+.hero-menu b{font-weight:600;font-size:1.05rem}
+.hero-menu small{color:var(--muted);font-size:.9rem}
+.hero-menu i{font-style:normal;color:var(--accent);transition:transform .3s var(--ease)}
+.hero-menu a:hover b{color:var(--accent)}
+.hero-menu a:hover i{transform:translateX(4px)}
+.hero-menu .hm-all{border:0;padding-bottom:4px;color:var(--accent);font-weight:600;font-size:.94rem}
+@media (max-width:900px){.hero.no-visual .hero-inner{grid-template-columns:1fr;gap:28px}}
+@media (max-width:640px){.hero-menu{padding:6px 16px 10px}.hero-menu a{padding:12px 0}.hero.no-visual .scroll-hint{display:none}}
